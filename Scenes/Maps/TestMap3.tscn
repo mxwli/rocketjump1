@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/GridTexture.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Grid.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+width = 26.0
+depth = 14.0
+material = ExtResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.66, 3.53, 0 )
+width = 12.0
+height = 1.0
+depth = 14.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 7.5 )
+width = 26.0
+height = 8.0
+depth = 1.0
+material = ExtResource( 1 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -7.5 )
+width = 26.0
+height = 8.0
+depth = 1.0
+material = ExtResource( 1 )
+
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 17, 2, 0 )
+width = 12.0
+height = 1.0
+depth = 14.0
+material = SubResource( 1 )
+
+[node name="CSGBox6" type="CSGBox" parent="CSGCombiner/CSGBox"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.5, 4, 0 )
+width = 16.0
+height = 8.0
+depth = 1.0
+material = ExtResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 0, 0 )
+width = 34.0
+height = 1.0
+depth = 28.0
+material = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]

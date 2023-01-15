@@ -1,0 +1,400 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Resources/GridTexture.tres" type="Material" id=1]
+[ext_resource path="res://Resources/Grid.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.8, 0.882353, 0.905882, 1 )
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_world_triplanar = true
+albedo_color = Color( 0.694118, 1, 0.729412, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_world_triplanar = true
+albedo_color = Color( 0.603922, 0.647059, 1, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_world_triplanar = true
+albedo_color = Color( 0.913725, 0.501961, 1, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_world_triplanar = true
+albedo_color = Color( 1, 0.576471, 0.576471, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 10, 1, 9 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+albedo_color = Color( 0.811765, 0.976471, 1, 0.345098 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Checkpoints" type="CSGCombiner" parent="." groups=["Checkpoint"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 172 )
+material_override = ExtResource( 1 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 5 )
+width = 32.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -12 )
+width = 10.0
+depth = 4.0
+
+[node name="CSGBox3" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -25 )
+width = 10.0
+depth = 4.0
+
+[node name="CSGBox4" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -49 )
+width = 10.0
+depth = 4.0
+
+[node name="CSGBox5" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 7, -67 )
+width = 20.0
+depth = 12.0
+
+[node name="CSGBox6" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999847, -0.0174524, 0, 0.0174524, 0.999847, 0, 6, -110 )
+width = 24.0
+
+[node name="CSGBox7" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 24, -123 )
+width = 8.0
+depth = 4.0
+
+[node name="CSGBox8" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 24, -155 )
+width = 8.0
+depth = 13.9
+
+[node name="CSGBox9" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, -0.5, -257 )
+width = 10.0
+height = 1.0
+depth = 22.0
+
+[node name="CSGBox10" type="CSGBox" parent="Checkpoints"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0.5, -285 )
+width = 36.0
+height = 1.0
+depth = 4.0
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 185 )
+
+[node name="Boundaries" type="CSGCombiner" parent="." groups=["Absorbant", "Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 0 )
+material_override = SubResource( 4 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Boundaries"]
+width = 40.0
+height = 40.0
+depth = 400.0
+
+[node name="CSGBox2" type="CSGBox" parent="Boundaries"]
+operation = 2
+width = 38.0
+height = 38.0
+depth = 398.0
+
+[node name="Obstacles1" type="CSGCombiner" parent="."]
+material_override = SubResource( 1 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 184 )
+width = 36.0
+depth = 28.0
+
+[node name="CSGBox2" type="CSGBox" parent="Obstacles1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 160 )
+width = 12.0
+depth = 6.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstacles1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 147 )
+width = 12.0
+depth = 6.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstacles1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 123 )
+width = 12.0
+depth = 6.0
+
+[node name="CSGBox5" type="CSGBox" parent="Obstacles1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 105 )
+width = 24.0
+depth = 14.0
+
+[node name="Obstacles2" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 74 )
+material_override = SubResource( 3 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7, -3 )
+height = 30.0
+depth = 44.0
+
+[node name="CSGBox2" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7, -3 )
+height = 30.0
+depth = 44.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, -18 )
+width = 22.0
+depth = 16.0
+
+[node name="CSGBox9" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -25 )
+width = 18.0
+height = 30.0
+
+[node name="CSGBox10" type="CSGBox" parent="Obstacles2/CSGBox9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+operation = 2
+width = 10.0
+height = 6.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -23 )
+width = 10.0
+depth = 16.0
+
+[node name="CSGBox5" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 14, -28 )
+height = 8.0
+depth = 6.0
+
+[node name="CSGBox6" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 14, -28 )
+height = 8.0
+depth = 6.0
+
+[node name="CSGBox7" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -57 )
+width = 10.0
+depth = 16.0
+
+[node name="CSGBox8" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, -38 )
+width = 10.0
+height = 6.0
+depth = 26.0
+
+[node name="CSGBox10" type="CSGBox" parent="Obstacles2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, -16 )
+width = 18.0
+depth = 16.0
+
+[node name="Obstacles3" type="CSGCombiner" parent="."]
+material_override = SubResource( 5 )
+use_collision = true
+
+[node name="CSGBox6" type="CSGBox" parent="Obstacles3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -85 )
+width = 12.0
+depth = 34.0
+
+[node name="CSGBox6" type="CSGBox" parent="Obstacles3/CSGBox6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+operation = 2
+width = 10.0
+height = 1.0
+depth = 32.0
+
+[node name="old" type="Spatial" parent="Obstacles3"]
+visible = false
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles3/old"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, -44, 22, 6 )
+visible = false
+width = 6.0
+height = 4.0
+depth = 8.0
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles3/old/CSGBox"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 9.53674e-07, 2, 0 )
+operation = 2
+width = 4.0
+height = 4.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Obstacles3/old"]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -44, 16, 1 )
+visible = false
+width = 6.0
+height = 4.0
+depth = 12.0
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles3/old/CSGBox2"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 9.53674e-07, 2, 0 )
+operation = 2
+width = 4.0
+height = 4.0
+depth = 12.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstacles3/old"]
+transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -44, 10, -7 )
+visible = false
+width = 6.0
+height = 4.0
+depth = 12.0
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles3/old/CSGBox3"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 9.53674e-07, 2, 0 )
+operation = 2
+width = 4.0
+height = 4.0
+depth = 12.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstacles3/old"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -44, 6, -16 )
+visible = false
+width = 6.0
+height = 4.0
+depth = 12.0
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles3/old/CSGBox4"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 9.53674e-07, 2, 0 )
+operation = 2
+width = 4.0
+height = 4.0
+depth = 12.0
+
+[node name="CSGBox5" type="CSGBox" parent="Obstacles3/old"]
+transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -44, 5, -22 )
+visible = false
+width = 8.0
+depth = 12.0
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles3"]
+transform = Transform( 0.707107, 0.707107, 0, -0.704416, 0.704416, 0.0871557, 0.0616284, -0.0616284, 0.996195, 0, 19, -16 )
+width = 6.0
+height = 6.0
+depth = 52.0
+
+[node name="Obstacles4" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -102 )
+material_override = SubResource( 6 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, -1 )
+width = 38.0
+height = 38.0
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles4/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13, 0 )
+operation = 2
+width = 6.0
+height = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Obstacles4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -8 )
+width = 38.0
+height = 1.0
+depth = 12.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstacles4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -8 )
+width = 12.0
+height = 12.0
+depth = 1.0
+
+[node name="CSGBox4" type="CSGBox" parent="Obstacles4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -83 )
+width = 22.0
+height = 1.0
+depth = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles4/CSGBox4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, -9.5 )
+width = 22.0
+height = 12.0
+depth = 1.0
+
+[node name="CSGBox5" type="CSGBox" parent="Obstacles4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -34 )
+width = 8.0
+depth = 8.0
+
+[node name="CSGBox6" type="CSGBox" parent="Obstacles4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -56 )
+width = 8.0
+depth = 8.0
+
+[node name="EndDialogue" type="Area" parent="Obstacles4" groups=["Dialogue"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -83 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacles4/EndDialogue"]
+shape = SubResource( 8 )
+
+[node name="Dialogue" type="Control" parent="Obstacles4/EndDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles4/EndDialogue/Dialogue"]
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]End of Basic Course. A new map has been added to the menu.[/center]"
+text = "End of Basic Course. A new map has been added to the menu."
+
+[node name="Pictures" type="Control" parent="Obstacles4/EndDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Obstacles4/EndDialogue/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Unlocker" type="Area" parent="Obstacles4" groups=["UnlockMap"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -83 )
+
+[node name="Playground" type="CollisionShape" parent="Obstacles4/Unlocker"]
+shape = SubResource( 8 )
+
+[node name="Obstacles4_5" type="CSGCombiner" parent="." groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -143 )
+material_override = SubResource( 7 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Obstacles4_5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 20 )
+width = 18.0
+height = 38.0
+depth = 1.0
+
+[node name="CSGBox2" type="CSGBox" parent="Obstacles4_5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, -4 )
+width = 12.0
+height = 38.0
+depth = 1.0
+
+[node name="CSGBox3" type="CSGBox" parent="Obstacles4_5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, -25 )
+width = 10.0
+height = 38.0
+depth = 1.0

@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/GridTexture.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2, 3, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Hallway" type="CSGCombiner" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, -96 )
+material_override = ExtResource( 1 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Hallway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 200.0
+height = 8.0
+depth = 6.0
+
+[node name="CSGBox" type="CSGBox" parent="Hallway/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+operation = 2
+width = 198.0
+height = 8.0
+depth = 4.0
+
+[node name="GreetingsDialogue" type="Area" parent="." groups=["Dialogue"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="GreetingsDialogue"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1 )
+shape = SubResource( 1 )
+
+[node name="Dialogue" type="Control" parent="GreetingsDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GreetingsDialogue/Dialogue"]
+margin_right = 153.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]hi there[/center]"
+text = "hi there"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="GreetingsDialogue/Dialogue"]
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "how does it do?"
+text = "how does it do?"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="GreetingsDialogue/Dialogue"]
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "how does it go..."
+text = "how does it go..."
+
+[node name="Pictures" type="Control" parent="GreetingsDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="GreetingsDialogue/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="GreetingsDialogue/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="GreetingsDialogue/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]

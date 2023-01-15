@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/droplets-in-a-cave-6785.mp3-ec01de360d7dcc487fd12144b86e8f5c.mp3str"
+
+[deps]
+
+source_file="res://Resources/droplets-in-a-cave-6785.mp3"
+dest_files=[ "res://.import/droplets-in-a-cave-6785.mp3-ec01de360d7dcc487fd12144b86e8f5c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

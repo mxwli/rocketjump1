@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Menu/Menu.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = -100.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+margin_left = 268.0
+margin_top = 138.0
+margin_right = 555.0
+margin_bottom = 262.0
+script = ExtResource( 1 )
+
+[node name="title" type="Label" parent="CenterContainer/GridContainer"]
+margin_right = 287.0
+margin_bottom = 14.0
+text = "rocket jump v1.0"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/GridContainer"]
+margin_top = 18.0
+margin_right = 287.0
+margin_bottom = 62.0
+columns = 3
+
+[node name="Tutorial" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+margin_right = 103.0
+margin_bottom = 20.0
+text = "Tutorial"
+
+[node name="Basic Course" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+margin_left = 107.0
+margin_right = 201.0
+margin_bottom = 20.0
+text = "Basic Course"
+
+[node name="Playground" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+margin_left = 205.0
+margin_right = 287.0
+margin_bottom = 20.0
+text = "Playground"
+
+[node name="Secret Cheese" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+margin_top = 24.0
+margin_right = 103.0
+margin_bottom = 44.0
+text = "Secret Cheese"
+
+[node name="Caves" type="Button" parent="CenterContainer/GridContainer/GridContainer"]
+margin_left = 107.0
+margin_top = 24.0
+margin_right = 201.0
+margin_bottom = 44.0
+text = "Caves"
+
+[node name="senslabel" type="Label" parent="CenterContainer/GridContainer"]
+margin_top = 66.0
+margin_right = 287.0
+margin_bottom = 80.0
+text = "sensitivity"
+align = 1
+
+[node name="sensslider" type="HSlider" parent="CenterContainer/GridContainer"]
+margin_top = 84.0
+margin_right = 287.0
+margin_bottom = 100.0
+min_value = 1.0
+max_value = 5.0
+step = 0.1
+value = 2.0
+ticks_on_borders = true
+
+[node name="save" type="Button" parent="CenterContainer/GridContainer"]
+margin_top = 104.0
+margin_right = 287.0
+margin_bottom = 124.0
+text = "save"
+
+[connection signal="pressed" from="CenterContainer/GridContainer/GridContainer/Tutorial" to="CenterContainer/GridContainer" method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/GridContainer/Basic Course" to="CenterContainer/GridContainer" method="_on_Bsc1_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/GridContainer/Playground" to="CenterContainer/GridContainer" method="_on_Playground_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/GridContainer/Secret Cheese" to="CenterContainer/GridContainer" method="_on_Secret_Cheese_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/GridContainer/Caves" to="CenterContainer/GridContainer" method="_on_Caves_pressed"]
+[connection signal="value_changed" from="CenterContainer/GridContainer/sensslider" to="CenterContainer/GridContainer" method="_on_sensslider_value_changed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/save" to="CenterContainer/GridContainer" method="_on_save_pressed"]

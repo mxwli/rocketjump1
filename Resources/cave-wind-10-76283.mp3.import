@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cave-wind-10-76283.mp3-e0c813a5fa6fabde8fadf283e6732203.mp3str"
+
+[deps]
+
+source_file="res://Resources/cave-wind-10-76283.mp3"
+dest_files=[ "res://.import/cave-wind-10-76283.mp3-e0c813a5fa6fabde8fadf283e6732203.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

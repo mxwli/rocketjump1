@@ -1,0 +1,25 @@
+implementation peculiars:
+
+world is made of collidable CSGmeshes
+staticbodies appear to work as well
+
+special functions on touch come from groups that CSGCombiners are in
+Restarters to reset player position to checkpoint
+	once the player collisionhull intersects, the reset is done
+
+Checkpoint to set player checkpoint
+	the checkpoint is the last position where the player collision intersected with the checkpoint collision
+
+Absorbant to absorb rocket explosions
+	if the raycast from the rocket hits an absorbant material, an exlposion is not created
+
+Dialogue is a very special case
+	objects in the Dialogue group have at least two children:
+		Dialogue
+			Its children are a list of RichTextLabels. the bbcode_text of these labels is the dialogue info
+			to be pushed onto the queue
+			if the label has a script with an `event` member, then the event member is treated like a function
+			and called
+		Pictures
+			Its children are a list of TextureRects. the texture of these rects is the texture info to be pushed
+			onto the queue

@@ -1,0 +1,2831 @@
+[gd_scene load_steps=83 format=2]
+
+[ext_resource path="res://Resources/bark.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/GridTexture.tres" type="Material" id=3]
+[ext_resource path="res://Resources/meow.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Maps/LightSwitch.gd" type="Script" id=5]
+[ext_resource path="res://Resources/light-switch-turn-on-47753.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Maps/Eyeball.gd" type="Script" id=7]
+[ext_resource path="res://Resources/epic-storm-thunder-rainwindwaves-no-loops-106800.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/Maps/GodoCave.gd" type="Script" id=9]
+
+[sub_resource type="Environment" id=6]
+ambient_light_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+ambient_light_energy = 0.3
+ambient_light_sky_contribution = 0.0
+
+[sub_resource type="SpatialMaterial" id=23]
+albedo_color = Color( 0.823529, 0.898039, 0.901961, 1 )
+
+[sub_resource type="StreamTexture" id=2]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_world_triplanar = true
+albedo_texture = SubResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_world_triplanar = true
+albedo_texture = SubResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+flags_unshaded = true
+flags_world_triplanar = true
+albedo_color = Color( 0.972549, 0.952941, 0.713726, 0.74902 )
+albedo_texture = SubResource( 2 )
+uv1_triplanar = true
+
+[sub_resource type="StreamTexture" id=27]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=35]
+flags_world_triplanar = true
+albedo_color = Color( 0.576471, 0.32549, 0, 1 )
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+roughness = 0.12
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=36]
+flags_world_triplanar = true
+albedo_color = Color( 0.603922, 0.870588, 0.827451, 1 )
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+roughness = 0.12
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=37]
+flags_world_triplanar = true
+albedo_texture = SubResource( 27 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_world_triplanar = true
+albedo_color = Color( 0.388235, 0.176471, 0, 1 )
+albedo_texture = SubResource( 2 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.513726, 0.615686, 0.74902, 1 )
+albedo_texture = SubResource( 2 )
+metallic_specular = 0.0
+roughness = 0.52
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_world_triplanar = true
+albedo_color = Color( 0.901961, 0.976471, 1, 1 )
+albedo_texture = SubResource( 2 )
+metallic = 1.0
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+flags_world_triplanar = true
+albedo_color = Color( 0.231373, 0.815686, 1, 0.32549 )
+albedo_texture = SubResource( 2 )
+metallic = 1.0
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_world_triplanar = true
+albedo_color = Color( 0.941176, 0.384314, 0.384314, 1 )
+albedo_texture = SubResource( 2 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_world_triplanar = true
+albedo_color = Color( 0.384314, 0.705882, 0.941176, 1 )
+albedo_texture = SubResource( 2 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.79
+uv1_triplanar = true
+
+[sub_resource type="StreamTexture" id=14]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_world_triplanar = true
+albedo_color = Color( 0.815686, 0.65098, 0.458824, 1 )
+albedo_texture = SubResource( 14 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0.380392, 0.431373, 0.435294, 1 )
+albedo_texture = SubResource( 14 )
+metallic = 0.16
+metallic_specular = 1.0
+roughness = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_world_triplanar = true
+albedo_color = Color( 0.2, 0.2, 0.2, 1 )
+albedo_texture = SubResource( 14 )
+metallic = 0.28
+metallic_specular = 0.37
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_color = Color( 0.886275, 0.647059, 0.352941, 1 )
+albedo_texture = SubResource( 14 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=21]
+flags_world_triplanar = true
+albedo_color = Color( 0.854902, 0.756863, 0.756863, 1 )
+albedo_texture = SubResource( 14 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_world_triplanar = true
+albedo_color = Color( 0.141176, 0.141176, 0.141176, 1 )
+albedo_texture = SubResource( 14 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=51]
+extents = Vector3( 5, 2, 13 )
+
+[sub_resource type="StreamTexture" id=24]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=25]
+flags_world_triplanar = true
+albedo_color = Color( 0.301961, 0.290196, 0.286275, 1 )
+albedo_texture = SubResource( 24 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=26]
+flags_world_triplanar = true
+albedo_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+albedo_texture = SubResource( 24 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=28]
+flags_world_triplanar = true
+albedo_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=29]
+flags_world_triplanar = true
+albedo_color = Color( 1, 0.509804, 0.509804, 1 )
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=30]
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=31]
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=32]
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=33]
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=34]
+albedo_color = Color( 0.243137, 0.243137, 0.243137, 1 )
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=38]
+flags_world_triplanar = true
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=39]
+flags_world_triplanar = true
+albedo_color = Color( 0.490196, 0.490196, 0.490196, 1 )
+albedo_texture = SubResource( 27 )
+metallic = 1.0
+metallic_specular = 1.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=40]
+flags_world_triplanar = true
+albedo_texture = SubResource( 27 )
+metallic = 1.0
+metallic_specular = 1.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=45]
+flags_world_triplanar = true
+albedo_color = Color( 1, 0.0862745, 0.0862745, 1 )
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=43]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 1, 0.235294, 0.235294, 0.462745 )
+
+[sub_resource type="SpatialMaterial" id=49]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0.254902 )
+
+[sub_resource type="StreamTexture" id=46]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=63]
+flags_world_triplanar = true
+albedo_texture = SubResource( 46 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=64]
+flags_world_triplanar = true
+albedo_color = Color( 0.639216, 0.639216, 0.639216, 1 )
+albedo_texture = SubResource( 46 )
+metallic = 0.9
+metallic_specular = 1.0
+roughness = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=44]
+flags_transparent = true
+albedo_color = Color( 0.701961, 0.486275, 0.196078, 0.713726 )
+albedo_texture = SubResource( 27 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=62]
+extents = Vector3( 10, 2, 5 )
+
+[sub_resource type="SpatialMaterial" id=59]
+albedo_color = Color( 0.113725, 0.113725, 0.113725, 1 )
+
+[sub_resource type="SpatialMaterial" id=60]
+flags_world_triplanar = true
+albedo_color = Color( 0.866667, 0.678431, 0.117647, 1 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="StreamTexture" id=61]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=47]
+flags_world_triplanar = true
+albedo_texture = SubResource( 61 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=48]
+flags_world_triplanar = true
+albedo_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+albedo_texture = SubResource( 61 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=50]
+extents = Vector3( 2, 1, 4 )
+
+[sub_resource type="StreamTexture" id=52]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=53]
+flags_world_triplanar = true
+albedo_color = Color( 0.364706, 0.54902, 0.541176, 1 )
+albedo_texture = SubResource( 52 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=54]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+params_line_width = 3.0
+
+[sub_resource type="Image" id=92]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 37, 0, 0, 0, 52, 0, 0, 0, 67, 0, 0, 0, 67, 0, 0, 0, 52, 0, 0, 0, 37, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 38, 38, 38, 80, 194, 194, 194, 161, 226, 226, 226, 199, 247, 247, 247, 236, 247, 247, 247, 236, 226, 226, 226, 199, 194, 194, 194, 161, 38, 38, 38, 80, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 135, 135, 135, 119, 245, 245, 245, 231, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 245, 245, 245, 231, 135, 135, 135, 119, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 135, 135, 135, 119, 255, 255, 255, 254, 255, 255, 255, 255, 255, 226, 226, 255, 255, 169, 169, 255, 255, 144, 144, 255, 255, 144, 144, 255, 255, 169, 169, 255, 255, 226, 226, 255, 255, 255, 255, 255, 255, 255, 255, 254, 133, 133, 133, 118, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 10, 41, 41, 41, 80, 245, 245, 245, 231, 255, 255, 255, 255, 255, 197, 197, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 197, 197, 255, 255, 255, 255, 255, 245, 245, 245, 231, 38, 38, 38, 79, 0, 0, 0, 10, 0, 0, 0, 36, 192, 192, 192, 159, 255, 255, 255, 255, 255, 226, 226, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 227, 227, 255, 255, 255, 255, 255, 192, 192, 192, 159, 0, 0, 0, 36, 0, 0, 0, 51, 225, 225, 225, 198, 255, 255, 255, 255, 255, 170, 170, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 170, 170, 255, 255, 255, 255, 255, 225, 225, 225, 198, 0, 0, 0, 51, 0, 0, 0, 66, 246, 246, 246, 233, 255, 255, 255, 255, 255, 146, 146, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 146, 146, 255, 255, 255, 255, 255, 246, 246, 246, 233, 0, 0, 0, 66, 0, 0, 0, 66, 246, 246, 246, 234, 255, 255, 255, 255, 255, 145, 145, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 146, 146, 255, 255, 255, 255, 255, 246, 246, 246, 233, 0, 0, 0, 66, 0, 0, 0, 51, 225, 225, 225, 198, 255, 255, 255, 255, 255, 170, 170, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 170, 170, 255, 255, 255, 255, 255, 225, 225, 225, 198, 0, 0, 0, 51, 0, 0, 0, 36, 192, 192, 192, 159, 255, 255, 255, 255, 255, 226, 226, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 226, 226, 255, 255, 255, 255, 255, 192, 192, 192, 159, 0, 0, 0, 36, 0, 0, 0, 10, 41, 41, 41, 80, 245, 245, 245, 231, 255, 255, 255, 255, 255, 197, 197, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 197, 197, 255, 255, 255, 255, 255, 245, 245, 245, 231, 41, 41, 41, 80, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 32, 135, 135, 135, 119, 255, 255, 255, 254, 255, 255, 255, 255, 255, 226, 226, 255, 255, 169, 169, 255, 255, 144, 144, 255, 255, 144, 144, 255, 255, 169, 169, 255, 255, 226, 226, 255, 255, 255, 255, 255, 255, 255, 255, 254, 135, 135, 135, 119, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 138, 138, 138, 120, 245, 245, 245, 231, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 245, 245, 245, 231, 136, 136, 136, 120, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 38, 38, 38, 80, 194, 194, 194, 161, 226, 226, 226, 199, 247, 247, 247, 236, 247, 247, 247, 236, 226, 226, 226, 199, 194, 194, 194, 161, 38, 38, 38, 80, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 37, 0, 0, 0, 52, 0, 0, 0, 67, 0, 0, 0, 67, 0, 0, 0, 52, 0, 0, 0, 37, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id=56]
+flags = 0
+flags = 0
+image = SubResource( 92 )
+size = Vector2( 16, 16 )
+
+[sub_resource type="SpatialMaterial" id=57]
+flags_transparent = true
+flags_unshaded = true
+flags_use_point_size = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+params_point_size = 16.0
+albedo_texture = SubResource( 56 )
+
+[sub_resource type="ArrayMesh" id=58]
+surfaces/0 = {
+"aabb": AABB( -13, 0, 0, 26, 4, 1e-05 ),
+"array_data": PoolByteArray( 0, 0, 80, 193, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 0, 64, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 80, 65, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"array_index_data": PoolByteArray(  ),
+"blend_shape_data": [  ],
+"format": 2194433,
+"index_count": 0,
+"material": SubResource( 57 ),
+"primitive": 0,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="SpatialMaterial" id=68]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=91]
+
+[sub_resource type="BoxShape" id=66]
+extents = Vector3( 6, 5, 1 )
+
+[sub_resource type="SpatialMaterial" id=87]
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=82]
+albedo_color = Color( 0.211765, 0.172549, 0.0941176, 1 )
+
+[sub_resource type="SpatialMaterial" id=83]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=81]
+albedo_color = Color( 0.933333, 0.764706, 0.764706, 1 )
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=85]
+albedo_color = Color( 1, 0, 0, 1 )
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=89]
+albedo_color = Color( 0, 0.0627451, 1, 1 )
+
+[sub_resource type="StreamTexture" id=70]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=71]
+flags_world_triplanar = true
+albedo_texture = SubResource( 70 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=73]
+flags_world_triplanar = true
+albedo_color = Color( 1, 0.247059, 0.247059, 1 )
+albedo_texture = SubResource( 70 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=79]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=75]
+albedo_color = Color( 1, 0.796078, 0, 1 )
+
+[sub_resource type="BoxShape" id=77]
+extents = Vector3( 9, 4, 7 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="RoomManager" type="RoomManager" parent="."]
+roomlist = NodePath("../Rooms")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Rooms" type="Spatial" parent="."]
+
+[node name="StartingRoom" type="Room" parent="Rooms"]
+
+[node name="LampLight" type="OmniLight" parent="Rooms/StartingRoom"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 87, 0 )
+light_energy = 1.44
+light_size = 4.0
+light_specular = 5.344
+shadow_enabled = true
+shadow_color = Color( 0.4, 0.4, 0.4, 1 )
+shadow_bias = 3.086
+omni_range = 200.0
+omni_attenuation = 1.8025
+
+[node name="Border" type="Spatial" parent="Rooms/StartingRoom"]
+
+[node name="Border" type="CSGCombiner" parent="Rooms/StartingRoom/Border" groups=["Absorbant"]]
+material_override = SubResource( 23 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Border/Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49, 0 )
+width = 200.0
+height = 100.0
+depth = 200.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Border/Border/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+operation = 2
+width = 198.0
+height = 100.0
+depth = 198.0
+
+[node name="RatHole" type="CSGCylinder" parent="Rooms/StartingRoom/Border/Border/CSGBox"]
+transform = Transform( 1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -93, 10, -100 )
+operation = 2
+radius = 1.5
+height = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Border/Border/CSGBox/RatHole"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+height = 4.0
+depth = 3.0
+
+[node name="Lamp" type="CSGCombiner" parent="Rooms/StartingRoom/Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 94, 0 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Border/Lamp"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+height = 6.0
+material = SubResource( 4 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/Border/Lamp"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+radius = 10.0
+height = 3.0
+cone = true
+material = SubResource( 3 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/StartingRoom/Border/Lamp"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0 )
+radius = 6.0
+material = SubResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Border/Lamp/CSGSphere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+operation = 2
+width = 16.0
+depth = 16.0
+
+[node name="Floor" type="CSGCombiner" parent="Rooms/StartingRoom/Border"]
+material_override = ExtResource( 3 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Border/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+width = 200.0
+height = 1.0
+depth = 200.0
+
+[node name="Door" type="CSGCombiner" parent="Rooms/StartingRoom/Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 1, -99 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Border/Door"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 1 )
+width = 42.0
+height = 82.0
+material = SubResource( 35 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1 )
+operation = 2
+width = 38.0
+height = 80.0
+material = SubResource( 35 )
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Border/Door"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.5, 1 )
+width = 36.0
+height = 79.0
+material = SubResource( 36 )
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( -3.09086e-08, 1, 3.09086e-08, -0.707107, -4.37114e-08, 0.707107, 0.707107, 0, 0.707107, 0, 21, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( -3.09086e-08, 1, 3.09086e-08, -0.707107, -4.37114e-08, 0.707107, 0.707107, 0, 0.707107, 0, 37, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( -3.09086e-08, 1, 3.09086e-08, -0.707107, -4.37114e-08, 0.707107, 0.707107, 0, 0.707107, 0, 5, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 21, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox6" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -16, 21, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox7" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 16, 21, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox8" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( -3.09086e-08, 1, 3.09086e-08, -0.707107, -4.37114e-08, 0.707107, 0.707107, 0, 0.707107, 0, -22, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox9" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( -3.09086e-08, 1, 3.09086e-08, -0.707107, -4.37114e-08, 0.707107, 0.707107, 0, 0.707107, 0, -6, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox10" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( -3.09086e-08, 1, 3.09086e-08, -0.707107, -4.37114e-08, 0.707107, 0.707107, 0, 0.707107, 0, -38, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox11" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -22, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox12" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -16, -22, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox13" type="CSGBox" parent="Rooms/StartingRoom/Border/Door/CSGBox2"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 16, -22, 2 )
+operation = 2
+height = 32.0
+material = SubResource( 36 )
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/Border/Door"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 38, 2 )
+width = 4.0
+height = 8.0
+material = SubResource( 37 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Border/Door/CSGBox3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 2 )
+radius = 2.0
+height = 4.0
+material = SubResource( 37 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/Border/Door/CSGBox3"]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -5, 0, 3 )
+radius = 0.7
+height = 8.0
+material = SubResource( 37 )
+
+[node name="DeskArea" type="Spatial" parent="Rooms/StartingRoom"]
+
+[node name="Table" type="CSGCombiner" parent="Rooms/StartingRoom/DeskArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 0, 74 )
+material_override = SubResource( 7 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Table"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 34, 4 )
+width = 84.0
+height = 4.0
+depth = 42.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Table"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 16, -14 )
+width = 4.0
+height = 32.0
+depth = 4.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Table"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 16, -14 )
+width = 4.0
+height = 32.0
+depth = 4.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Table"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 16, 22 )
+width = 4.0
+height = 32.0
+depth = 4.0
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Table"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 16, 22 )
+width = 4.0
+height = 32.0
+depth = 4.0
+
+[node name="Chair" type="CSGCombiner" parent="Rooms/StartingRoom/DeskArea"]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 65, 19, 53 )
+material_override = SubResource( 8 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+width = 22.0
+depth = 22.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -10, 8 )
+height = 18.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -10, 8 )
+height = 18.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -10, -10 )
+height = 18.0
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -10, -10 )
+height = 18.0
+
+[node name="CSGBox6" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 13, -10 )
+height = 24.0
+
+[node name="CSGBox7" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 13, -10 )
+height = 24.0
+
+[node name="CSGBox8" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, -4, 24, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox9" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 4, 24, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox10" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, -4, 22, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox11" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 4, 22, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox12" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, -4, 20, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox13" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 4, 20, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox14" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, -4, 18, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox15" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 4, 18, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox16" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, -4, 16, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox17" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Chair"]
+transform = Transform( 0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 4, 16, -10 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="FishTank" type="CSGCombiner" parent="Rooms/StartingRoom/DeskArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73, 37, 79 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/FishTank"]
+width = 44.0
+depth = 24.0
+material = SubResource( 9 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/FishTank/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+operation = 2
+width = 42.0
+height = 1.0
+depth = 22.0
+material = SubResource( 9 )
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/FishTank"]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 22, 0 )
+width = 44.0
+depth = 24.0
+material = SubResource( 9 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/FishTank/CSGBox3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+operation = 2
+width = 42.0
+height = 1.0
+depth = 22.0
+material = SubResource( 9 )
+
+[node name="FishTankGlass" type="CSGCombiner" parent="Rooms/StartingRoom/DeskArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73, 48, 79 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/FishTankGlass"]
+width = 42.0
+height = 22.0
+depth = 22.0
+material = SubResource( 10 )
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/FishTankGlass/CSGBox2"]
+operation = 2
+width = 40.0
+height = 22.0
+depth = 20.0
+material = SubResource( 10 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/FishTankGlass/CSGBox2"]
+transform = Transform( 0.7714, 0.242363, 0.588387, -0.0299194, 0.937422, -0.346906, -0.635644, 0.25, 0.730378, -20.9999, 6, -11 )
+operation = 2
+width = 14.0
+height = 16.0
+depth = 6.0
+
+[node name="House" type="CSGCombiner" parent="Rooms/StartingRoom/DeskArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 37.5, 77 )
+material_override = SubResource( 11 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, 7 )
+radius = 3.0
+height = 6.0
+sides = 16
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House/CSGCylinder"]
+operation = 2
+radius = 2.5
+height = 6.0
+sides = 16
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/House/CSGCylinder"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -2, -1, -2 )
+operation = 2
+height = 4.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House/CSGCylinder"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2, 0, 0 )
+operation = 2
+height = 2.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 6, 7 )
+radius = 4.0
+height = 3.0
+sides = 16
+cone = true
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 7, 7 )
+radius = 0.25
+height = 4.0
+
+[node name="House2" type="CSGCombiner" parent="Rooms/StartingRoom/DeskArea"]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 71, 37.5, 91 )
+material_override = SubResource( 12 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, 7 )
+radius = 3.0
+height = 6.0
+sides = 16
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House2/CSGCylinder"]
+operation = 2
+radius = 2.5
+height = 6.0
+sides = 16
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/House2/CSGCylinder"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -2, -1, -2 )
+operation = 2
+height = 4.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House2/CSGCylinder"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2, 0, 0 )
+operation = 2
+height = 2.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 6, 7 )
+radius = 4.0
+height = 3.0
+sides = 16
+cone = true
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/StartingRoom/DeskArea/House2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 7, 7 )
+radius = 0.25
+height = 4.0
+
+[node name="Ramp" type="CSGCombiner" parent="Rooms/StartingRoom/DeskArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 36, 80 )
+material_override = ExtResource( 3 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Ramp"]
+transform = Transform( 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, -11, -2, 0 )
+width = 22.0
+height = 10.0
+depth = 24.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Ramp/CSGBox"]
+transform = Transform( 0.965927, -0.258819, 0, 0.258819, 0.965927, 0, 0, 0, 1, 0.776455, -2.89777, 0 )
+operation = 2
+width = 24.0
+height = 10.0
+depth = 28.0
+
+[node name="RackArea" type="Spatial" parent="Rooms/StartingRoom"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 0, 32 )
+
+[node name="Rack" type="CSGCombiner" parent="Rooms/StartingRoom/RackArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 45, 0 )
+material_override = SubResource( 15 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
+width = 80.0
+height = 4.0
+depth = 134.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox"]
+operation = 2
+width = 72.0
+height = 4.0
+depth = 126.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -58 )
+width = 72.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+width = 72.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+width = 72.0
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15 )
+width = 72.0
+
+[node name="CSGBox6" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+width = 72.0
+
+[node name="CSGBox7" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25 )
+width = 72.0
+
+[node name="CSGBox8" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30 )
+width = 72.0
+
+[node name="CSGBox9" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35 )
+width = 72.0
+
+[node name="CSGBox10" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40 )
+width = 72.0
+
+[node name="CSGBox11" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45 )
+width = 72.0
+
+[node name="CSGBox12" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50 )
+width = 72.0
+
+[node name="CSGBox13" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 55 )
+width = 72.0
+
+[node name="CSGBox14" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60 )
+width = 72.0
+
+[node name="CSGBox15" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 65 )
+width = 72.0
+
+[node name="CSGBox16" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 70 )
+width = 72.0
+
+[node name="CSGBox17" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 75 )
+width = 72.0
+
+[node name="CSGBox18" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80 )
+width = 72.0
+
+[node name="CSGBox19" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 85 )
+width = 72.0
+
+[node name="CSGBox20" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 90 )
+width = 72.0
+
+[node name="CSGBox21" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 95 )
+width = 72.0
+
+[node name="CSGBox22" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100 )
+width = 72.0
+
+[node name="CSGBox23" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 105 )
+width = 72.0
+
+[node name="CSGBox24" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 110 )
+width = 72.0
+
+[node name="CSGBox25" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Rack/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 115 )
+width = 72.0
+
+[node name="Chain" type="CSGCombiner" parent="Rooms/StartingRoom/RackArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 49, -64 )
+material_override = SubResource( 16 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 0, 5, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox2"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 11, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox3"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 17, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox4"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 23, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox5"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox6" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 29, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox6"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox7" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 35, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox7"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox8" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 41, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox8"]
+operation = 2
+height = 6.0
+
+[node name="CSGBox9" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain"]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 47, 0 )
+width = 1.0
+height = 8.0
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Chain/CSGBox9"]
+operation = 2
+height = 6.0
+
+[node name="Anchor" type="CSGCombiner" parent="Rooms/StartingRoom/RackArea"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 30, 42, 66 )
+material_override = SubResource( 17 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Anchor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
+width = 6.0
+height = 4.0
+depth = 6.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Anchor/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5 )
+operation = 2
+width = 6.0
+height = 4.0
+depth = 6.0
+
+[node name="Anchor2" type="CSGCombiner" parent="Rooms/StartingRoom/RackArea"]
+transform = Transform( 1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -47, 42, -65 )
+material_override = SubResource( 17 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Anchor2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
+width = 6.0
+height = 4.0
+depth = 6.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Anchor2/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5 )
+operation = 2
+width = 6.0
+height = 4.0
+depth = 6.0
+
+[node name="Box" type="CSGCombiner" parent="Rooms/StartingRoom/RackArea"]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -26, 47, 42 )
+material_override = SubResource( 20 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Box"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 7, 4 )
+width = 22.0
+height = 16.0
+depth = 22.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Box/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+operation = 2
+width = 21.0
+height = 16.0
+depth = 21.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Box"]
+transform = Transform( 1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, -4, 18, -1.75 )
+width = 22.0
+height = 12.0
+depth = 0.5
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Box"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4, 15, 8.75 )
+width = 22.0
+height = 12.0
+depth = 0.5
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Box"]
+transform = Transform( 1.13133e-08, 0.965926, -0.258819, 4.2222e-08, -0.258819, -0.965926, -1, 0, -4.37114e-08, -8.75, 13, 4 )
+width = 21.0
+height = 12.0
+depth = 0.5
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Box"]
+transform = Transform( -4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, 8.40884, 20.6653, 4 )
+width = 21.0
+height = 12.0
+depth = 0.5
+
+[node name="Mouse" type="CSGCombiner" parent="Rooms/StartingRoom/RackArea"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -14, 44, -27 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Mouse"]
+transform = Transform( 0.707107, 0.707107, 0, -0.683013, 0.683013, 0.258819, 0.183013, -0.183013, 0.965926, 0, 1, 0 )
+width = 4.0
+height = 4.0
+depth = 10.0
+material = SubResource( 21 )
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Mouse"]
+transform = Transform( 0.707107, 0.707107, 0, -0.683013, 0.683013, -0.258819, -0.183013, 0.183013, 0.965926, 0, 1, 8 )
+width = 4.0
+height = 4.0
+depth = 10.0
+material = SubResource( 21 )
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Mouse"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4 )
+operation = 2
+width = 8.0
+height = 6.0
+depth = 22.0
+material = SubResource( 21 )
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Mouse"]
+transform = Transform( 0.258819, -4.2222e-08, -0.965926, -0.965926, -1.13133e-08, -0.258819, 0, 1, -4.37114e-08, 1, 4, 9 )
+height = 0.5
+material = SubResource( 21 )
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Mouse/CSGBox4"]
+transform = Transform( 0.5, 3.78552e-08, 0.866026, -3.78552e-08, 1, -2.18557e-08, -0.866026, -2.18557e-08, 0.5, -0.517639, 0, 1.93185 )
+operation = 2
+height = 0.5
+depth = 4.0
+material = SubResource( 21 )
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Mouse"]
+transform = Transform( 0.965926, -1.13133e-08, -0.258819, -0.258819, -4.2222e-08, -0.965926, 0, 1, -4.37114e-08, -1, 4, 9 )
+height = 0.5
+material = SubResource( 21 )
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/RackArea/Mouse/CSGBox5"]
+transform = Transform( 0.866026, 2.18557e-08, 0.5, -2.18557e-08, 1, -5.8562e-09, -0.5, -5.85622e-09, 0.866026, 1.8625, 0, -0.776455 )
+operation = 2
+height = 0.5
+depth = 4.0
+material = SubResource( 21 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/StartingRoom/RackArea/Mouse"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565067, 2.88094, 10.0541 )
+radius = 0.25
+material = SubResource( 22 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="Rooms/StartingRoom/RackArea/Mouse"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.565, 2.881, 10.054 )
+radius = 0.25
+material = SubResource( 22 )
+
+[node name="MouseSpeek" type="Area" parent="Rooms/StartingRoom/RackArea" groups=["Dialogue"]]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -10, 47, -23 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/StartingRoom/RackArea/MouseSpeek"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.707108, 1, 0.707108 )
+shape = SubResource( 51 )
+
+[node name="Dialogue" type="Control" parent="Rooms/StartingRoom/RackArea/MouseSpeek"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/StartingRoom/RackArea/MouseSpeek/Dialogue"]
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]bark bark bark![/center]"
+text = "bark bark bark!"
+
+[node name="Pictures" type="Control" parent="Rooms/StartingRoom/RackArea/MouseSpeek"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Rooms/StartingRoom/RackArea/MouseSpeek/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+
+[node name="Tracks" type="Spatial" parent="Rooms/StartingRoom"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 47, 85 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+use_collision = true
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, -54 )
+use_in_baked_light = true
+width = 8.0
+height = 1.0
+depth = 6.0
+material = ExtResource( 3 )
+
+[node name="Base" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+material_override = SubResource( 25 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Base"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -23 )
+use_in_baked_light = true
+width = 8.0
+height = 3.0
+depth = 58.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Base"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -23.5 )
+use_in_baked_light = true
+operation = 2
+width = 6.0
+depth = 58.0
+
+[node name="Slide" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 5, -84 )
+material_override = SubResource( 26 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/Slide"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, 0 )
+radius = 15.0
+height = 10.0
+sides = 32
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/Slide/CSGCylinder"]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.8147e-06, -6, 0 )
+operation = 2
+radius = 15.0
+height = 22.0
+sides = 32
+cone = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Slide/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
+operation = 2
+width = 36.0
+height = 12.0
+depth = 16.0
+
+[node name="Attachments" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71, -13, -123 )
+material_override = SubResource( 28 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Attachments"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 21, 7 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Attachments"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 21, -25 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Attachments"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 21, -57 )
+width = 8.0
+height = 1.0
+depth = 1.0
+
+[node name="Hangings" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68, 8.42799, -146 )
+material_override = SubResource( 29 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -1, 25.7128 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( 1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, 0, -2.50035, 17.96 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( -1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, 0, -1, 2.24721 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( -1, 1.06542e-08, -8.67711e-08, 0, 0.992546, 0.121869, 8.74228e-08, 0.121869, -0.992546, 0, -2.50035, 10 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, -1, -6.28719 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CSGBox6" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( 1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, 0, -2.50035, -14.04 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CSGBox7" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( -1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, 0, -1, -29.7528 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CSGBox8" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangings"]
+transform = Transform( -1, 1.06542e-08, -8.67711e-08, 0, 0.992546, 0.121869, 8.74228e-08, 0.121869, -0.992546, 0, -2.50035, -22 )
+width = 8.0
+height = 0.5
+depth = 8.0
+
+[node name="CarProp" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+transform = Transform( 1, 0, 0, 0, 0.994049, 0.108936, 0, -0.108936, 0.994049, -68, 7.93234, -128.44 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp"]
+width = 4.0
+height = 3.0
+depth = 8.0
+material = SubResource( 30 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 7.62939e-06, 1, -2 )
+operation = 2
+height = 6.0
+material = SubResource( 31 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox/CSGCylinder"]
+transform = Transform( 0.845094, -6.77116e-09, 0.534618, -6.77116e-09, 1, 2.33689e-08, -0.534618, -2.33689e-08, 0.845094, -1, 0, 0.494188 )
+height = 6.0
+material = SubResource( 32 )
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.06541 )
+height = 4.45561
+material = SubResource( 32 )
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox/CSGCylinder"]
+transform = Transform( 0.979127, -9.1238e-10, -0.203249, -9.1238e-10, 1, -8.88428e-09, 0.203249, 8.88428e-09, 0.979127, 0.0491257, 0, -1.64006 )
+height = 4.45561
+material = SubResource( 32 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2.00001, -1, -2 )
+operation = 2
+height = 1.5
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2.00001, -1, 3 )
+operation = 2
+height = 1.5
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 1.73877, 4.5369 )
+operation = 2
+width = 6.0
+material = SubResource( 31 )
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.99999, -1, -2 )
+operation = 2
+height = 1.5
+
+[node name="CSGCylinder5" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.99999, -1, 3 )
+operation = 2
+height = 1.5
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 4 )
+width = 4.0
+material = SubResource( 33 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, 2.00001, -1.00001, -2 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, 2.00001, -1, 3 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, -1.99999, -1.00001, -2 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, -1.99999, -1, 3 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="CarProp2" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93234, -0.440491 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp2"]
+width = 4.0
+height = 3.0
+depth = 8.0
+material = SubResource( 30 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 7.62939e-06, 1, -2 )
+operation = 2
+height = 6.0
+material = SubResource( 31 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox/CSGCylinder"]
+transform = Transform( 0.845094, -6.77116e-09, 0.534618, -6.77116e-09, 1, 2.33689e-08, -0.534618, -2.33689e-08, 0.845094, -1, 0, 0.494188 )
+height = 6.0
+material = SubResource( 32 )
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.06541 )
+height = 4.45561
+material = SubResource( 32 )
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox/CSGCylinder"]
+transform = Transform( 0.979127, -9.1238e-10, -0.203249, -9.1238e-10, 1, -8.88428e-09, 0.203249, 8.88428e-09, 0.979127, 0.0491257, 0, -1.64006 )
+height = 4.45561
+material = SubResource( 32 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2.00001, -1, -2 )
+operation = 2
+height = 1.5
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2.00001, -1, 3 )
+operation = 2
+height = 1.5
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 1.73877, 4.5369 )
+operation = 2
+width = 6.0
+material = SubResource( 31 )
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.99999, -1, -2 )
+operation = 2
+height = 1.5
+
+[node name="CSGCylinder5" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.99999, -1, 3 )
+operation = 2
+height = 1.5
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/StartingRoom/Tracks/CarProp2/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 4 )
+width = 4.0
+material = SubResource( 33 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, 2.00001, -1.00001, -2 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, 2.00001, -1, 3 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, -1.99999, -1.00001, -2 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="Rooms/StartingRoom/Tracks/CarProp2"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.22045e-16, 1, -1.99999, -1, 3 )
+radius = 0.9
+material = SubResource( 34 )
+
+[node name="Hangar2" type="CSGCombiner" parent="Rooms/StartingRoom/Tracks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 8.7, -183 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/Tracks/Hangar2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1 )
+width = 12.0
+depth = 4.0
+material = SubResource( 38 )
+
+[node name="Portal" type="Portal" parent="Rooms/StartingRoom"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 58, -99.5 )
+points = PoolVector2Array( 2, -1, 2, 3, -2, 3, -2, -1 )
+
+[node name="Pipes" type="Room" parent="Rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 58, -104 )
+
+[node name="Pipe1" type="CSGCombiner" parent="Rooms/Pipes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Pipes/Pipe1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 1 )
+radius = 3.0
+height = 6.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Pipes/Pipe1/CSGCylinder"]
+operation = 2
+radius = 2.5
+height = 8.0
+material = SubResource( 39 )
+
+[node name="CSGTorus" type="CSGTorus" parent="Rooms/Pipes/Pipe1"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -4, -2 )
+inner_radius = 1.0
+outer_radius = 7.0
+ring_sides = 8
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Pipes/Pipe1/CSGTorus"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+operation = 2
+width = 14.0
+height = 6.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Pipes/Pipe1/CSGTorus"]
+transform = Transform( -4.37114e-08, -4.37114e-08, 1, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 4, 0, 0 )
+operation = 2
+width = 14.0
+height = 6.0
+depth = 8.0
+
+[node name="CSGTorus" type="CSGTorus" parent="Rooms/Pipes/Pipe1/CSGTorus"]
+operation = 2
+inner_radius = 1.5
+outer_radius = 6.5
+ring_sides = 8
+material = SubResource( 39 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Pipes/Pipe1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18, -6 )
+radius = 3.0
+height = 28.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Pipes/Pipe1/CSGCylinder2"]
+operation = 2
+radius = 2.5
+height = 30.0
+material = SubResource( 39 )
+
+[node name="Joint" type="CSGCombiner" parent="Rooms/Pipes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -32, -7 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Pipes/Joint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -3 )
+width = 8.0
+height = 6.0
+depth = 16.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Pipes/Joint/CSGBox"]
+operation = 2
+width = 7.5
+height = 5.5
+depth = 15.5
+material = SubResource( 40 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Pipes/Joint/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4 )
+operation = 2
+radius = 2.6
+height = 2.0
+material = SubResource( 39 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Pipes/Joint/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -4 )
+operation = 2
+radius = 2.6
+height = 2.0
+material = SubResource( 39 )
+
+[node name="Pipe2" type="CSGCombiner" parent="Rooms/Pipes" groups=["Checkpoint"]]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.00001, 1, -20 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Pipes/Pipe2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 34, 1 )
+radius = 3.0
+height = 6.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Pipes/Pipe2/CSGCylinder"]
+operation = 2
+radius = 2.5
+height = 8.0
+material = SubResource( 39 )
+
+[node name="CSGTorus" type="CSGTorus" parent="Rooms/Pipes/Pipe2"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 30, -2 )
+inner_radius = 1.0
+outer_radius = 7.0
+ring_sides = 8
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Pipes/Pipe2/CSGTorus"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+operation = 2
+width = 14.0
+height = 6.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Pipes/Pipe2/CSGTorus"]
+transform = Transform( -4.37114e-08, -4.37114e-08, 1, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 4, 0, 0 )
+operation = 2
+width = 14.0
+height = 6.0
+depth = 8.0
+
+[node name="CSGTorus" type="CSGTorus" parent="Rooms/Pipes/Pipe2/CSGTorus"]
+operation = 2
+inner_radius = 1.5
+outer_radius = 6.5
+ring_sides = 8
+material = SubResource( 39 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Pipes/Pipe2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6 )
+radius = 3.0
+height = 62.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Pipes/Pipe2/CSGCylinder2"]
+operation = 2
+radius = 2.5
+height = 64.0
+material = SubResource( 39 )
+
+[node name="Portal" type="Portal" parent="Rooms/Pipes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 35, -24 )
+points = PoolVector2Array( 3, -3, 3, 3, -3, 3, -3, -3 )
+
+[node name="Kitchen" type="Room" parent="Rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -133, 50, -228 )
+script = ExtResource( 5 )
+
+[node name="LightClick" type="AudioStreamPlayer" parent="Rooms/Kitchen"]
+stream = ExtResource( 6 )
+volume_db = 1.0
+pitch_scale = 0.6
+
+[node name="OmniLight" type="OmniLight" parent="Rooms/Kitchen"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38, -7 )
+light_color = Color( 1, 0.4, 0.4, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.501961, 0, 0, 1 )
+shadow_bias = 1.639
+omni_range = 150.0
+
+[node name="NegativeLight" type="OmniLight" parent="Rooms/Kitchen"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 15, 29 )
+visible = false
+light_negative = true
+shadow_enabled = true
+shadow_bias = 10.0
+shadow_contact = 0.288
+shadow_reverse_cull_face = true
+omni_range = 30.0
+omni_attenuation = 1.31951
+
+[node name="Borders" type="Spatial" parent="Rooms/Kitchen"]
+
+[node name="Borders" type="CSGCombiner" parent="Rooms/Kitchen/Borders"]
+material_override = ExtResource( 3 )
+use_collision = true
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Kitchen/Borders/Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44, -7 )
+radius = 0.1
+height = 10.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Borders"]
+width = 150.0
+height = 100.0
+depth = 200.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Borders/CSGBox" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+operation = 2
+width = 148.0
+height = 100.0
+depth = 198.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/Borders/Borders/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 40, 43, 99 )
+operation = 2
+radius = 2.0
+height = 4.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Kitchen/Borders/Borders/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -50, -4.5 )
+operation = 2
+width = 2.5
+height = 4.0
+depth = 2.5
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Kitchen/Borders/Borders/CSGBox"]
+transform = Transform( 0, 1, 0, -1, 0, 0, 0, 0, 1, -26, -44, 100 )
+operation = 2
+width = 6.0
+height = 14.0
+depth = 3.0
+
+[node name="Floor" type="CSGCombiner" parent="Rooms/Kitchen/Borders" groups=["Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -51, 0 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0 )
+width = 148.0
+depth = 198.0
+material = SubResource( 45 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Floor/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -4.5 )
+operation = 2
+width = 2.5
+height = 4.0
+depth = 2.5
+
+[node name="Light" type="CSGCombiner" parent="Rooms/Kitchen/Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38, -7 )
+material_override = SubResource( 43 )
+use_collision = true
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Borders/Light"]
+material_override = SubResource( 43 )
+
+[node name="Shields" type="CSGCombiner" parent="Rooms/Kitchen/Borders" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39 )
+material_override = SubResource( 49 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Shields"]
+width = 48.0
+height = 98.0
+depth = 122.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Shields/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1 )
+operation = 2
+width = 48.0
+height = 98.0
+depth = 122.0
+
+[node name="Door" type="CSGCombiner" parent="Rooms/Kitchen/Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, -40, -98 )
+material_override = SubResource( 63 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Door"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+width = 48.0
+height = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Door/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1 )
+operation = 2
+width = 46.0
+height = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Door/CSGBox/CSGBox"]
+operation = 2
+width = 44.0
+height = 18.0
+
+[node name="Vents" type="CSGCombiner" parent="Rooms/Kitchen/Borders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26, -43, 98 )
+material_override = SubResource( 64 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents"]
+width = 18.0
+height = 6.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+width = 16.0
+height = 0.5
+depth = 4.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+operation = 2
+width = 16.0
+height = 0.5
+depth = 4.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox"]
+operation = 2
+width = 16.0
+height = 0.5
+depth = 4.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+operation = 2
+width = 16.0
+height = 0.5
+depth = 4.0
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+operation = 2
+width = 16.0
+height = 0.5
+depth = 4.0
+
+[node name="CSGBox6" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox"]
+transform = Transform( 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, -3, -1, 0 )
+width = 4.0
+height = 4.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox/CSGBox6"]
+operation = 2
+width = 3.0
+height = 3.0
+depth = 3.0
+
+[node name="CSGBox7" type="CSGBox" parent="Rooms/Kitchen/Borders/Vents/CSGBox"]
+transform = Transform( 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, -3, -1, 0 )
+operation = 2
+width = 3.0
+height = 3.0
+depth = 3.0
+
+[node name="CeilingPlanks" type="Spatial" parent="Rooms/Kitchen"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38, 0 )
+
+[node name="Plank" type="CSGCombiner" parent="Rooms/Kitchen/CeilingPlanks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0 )
+material_override = SubResource( 44 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/Plank"]
+width = 4.0
+depth = 198.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/Plank/CSGBox"]
+transform = Transform( 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 0, 1, 0 )
+operation = 2
+depth = 198.0
+
+[node name="Plank2" type="CSGCombiner" parent="Rooms/Kitchen/CeilingPlanks"]
+transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -34, -49, -13 )
+material_override = SubResource( 44 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/Plank2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0621643, -13.8923 )
+width = 4.0
+depth = 176.0
+
+[node name="Plank3" type="CSGCombiner" parent="Rooms/Kitchen/CeilingPlanks"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -82 )
+material_override = SubResource( 44 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/Plank3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 4.0
+depth = 148.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/Plank3/CSGBox"]
+transform = Transform( 0.707107, 0.707107, -1.28028e-08, -0.707107, 0.707107, -3.09086e-08, -1.28028e-08, 3.09086e-08, 1, 0, 0.999992, 0 )
+operation = 2
+depth = 148.0
+
+[node name="Checkpoint" type="CSGCombiner" parent="Rooms/Kitchen/CeilingPlanks" groups=["Checkpoint"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 1.001, -87 )
+material_override = ExtResource( 3 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/Checkpoint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+width = 4.0
+
+[node name="SpotLight" type="SpotLight" parent="Rooms/Kitchen/CeilingPlanks/Checkpoint"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 1 )
+spot_range = 10.471
+spot_attenuation = 0.517632
+spot_angle = 14.8388
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Rooms/Kitchen/CeilingPlanks"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -86 )
+material_override = ExtResource( 3 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 6.0
+depth = 4.0
+
+[node name="FloorPlank" type="Spatial" parent="Rooms/Kitchen"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -47, 54 )
+
+[node name="Plank" type="CSGCombiner" parent="Rooms/Kitchen/FloorPlank"]
+transform = Transform( 1, 0, 1.49012e-08, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 2 )
+material_override = SubResource( 44 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Plank"]
+transform = Transform( 1, -1.49012e-08, 2.98023e-08, -1.54268e-08, 1, 5.96046e-08, 5.75737e-08, 0, 1, 0, 0, 0 )
+material_override = ExtResource( 3 )
+width = 4.0
+depth = 10.0
+
+[node name="Plank2" type="CSGCombiner" parent="Rooms/Kitchen/FloorPlank"]
+transform = Transform( 0.5, 1.29048e-08, 0.866025, 0.224144, 0.965926, -0.12941, -0.836516, 0.258819, 0.482963, 75, -1, 32 )
+material_override = SubResource( 44 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Plank2"]
+transform = Transform( 0.965926, -1.49012e-08, 0.258819, -1.49012e-08, 1, 5.96046e-08, -0.258819, -1.49012e-08, 0.965926, 0, 0, 0 )
+material_override = ExtResource( 3 )
+width = 4.0
+depth = 20.0
+
+[node name="Plank3" type="CSGCombiner" parent="Rooms/Kitchen/FloorPlank"]
+transform = Transform( -1.49012e-08, 1.11759e-08, 1, 1.49012e-08, 1, -7.45058e-09, -1, -6.45239e-09, -8.9407e-08, 8, -1, 40 )
+material_override = SubResource( 44 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Plank3"]
+transform = Transform( 1, -1.36491e-08, 0, -1.34806e-08, 1, 6.37152e-08, -2.08616e-07, -1.69609e-08, 1, 0, 0, 0 )
+material_override = ExtResource( 3 )
+width = 10.0
+depth = 20.0
+
+[node name="Hamster" type="Spatial" parent="Rooms/Kitchen/FloorPlank"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 40 )
+
+[node name="Hamster" type="CSGCombiner" parent="Rooms/Kitchen/FloorPlank/Hamster"]
+transform = Transform( 0.983682, 0.179918, 0, -0.179918, 0.983682, 0, 0, 0, 1, 0, 0, 0 )
+material_override = ExtResource( 3 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( 0.165564, 0.986199, 0, -0.986199, 0.165564, 0, 0, 0, 1, 1.49477, 1.79895, 0 )
+height = 2.0
+sides = 4
+cone = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder"]
+transform = Transform( 0.995649, -0.0931873, 0, 0.0931873, 0.995649, 0, 0, 0, 1, -0.0257759, 1.40442, 0 )
+operation = 2
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder"]
+transform = Transform( -1, 8.9407e-08, 0, -8.9407e-08, -1, 0, 0, 0, 1, 0.00353622, -2.3248, 0 )
+height = 2.71508
+sides = 4
+cone = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder/CSGCylinder"]
+transform = Transform( 0.94914, 0.314854, 0, -0.314854, 0.94914, 0, 0, 0, 1, 0.488636, 1.18079, 0 )
+operation = 2
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( 0.965926, -0.258819, 2.26267e-08, -0.258819, -0.965926, 8.44439e-08, 0, -8.74228e-08, -1, -1, -1.78571, 0 )
+radius = 1.1
+height = 6.0
+cone = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder2"]
+transform = Transform( 0.967432, 0.253133, -2.21296e-08, -0.253133, 0.967432, 2.84724e-09, 2.21296e-08, 2.84721e-09, 1, 0.422668, 1.57732, 0 )
+operation = 2
+width = 2.98994
+height = 4.83271
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder2"]
+transform = Transform( 0.547914, -0.836535, 7.31322e-08, 0.836535, 0.547914, 3.95226e-08, -7.31322e-08, 3.95226e-08, 1, -0.864655, -0.114395, 0 )
+radius = 0.283282
+height = 2.81583
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( -0.943031, 0.332704, -2.90859e-08, 0.332704, 0.943031, -8.24424e-08, 0, -8.74228e-08, -1, 0.750366, 3.89712, 0 )
+radius = 1.1
+height = 6.0
+cone = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder3"]
+transform = Transform( 0.940478, 0.339854, -2.9711e-08, -0.339854, 0.940478, 5.20357e-09, 2.9711e-08, 5.20354e-09, 1, 0.847916, 0.610416, 0 )
+operation = 2
+width = 4.76055
+height = 6.34031
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( 1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 1 )
+radius = 0.8
+height = 0.8
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder4"]
+transform = Transform( 0.229631, -0.945712, 0.229999, 0.952699, 0.170069, -0.251881, 0.199091, 0.276959, 0.940032, 0.879181, -0.0511932, -0.896446 )
+radius = 0.25
+height = 2.02659
+
+[node name="CSGCylinder5" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( 0.991158, -0.121231, 0.0539366, -0.000908762, 0.400279, 0.916393, -0.132685, -0.908339, 0.39663, 0, 0, -1 )
+radius = 0.8
+height = 0.8
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder5"]
+transform = Transform( 0.229631, -0.945712, 0.229999, 0.952699, 0.170069, -0.251881, 0.199091, 0.276959, 0.940032, 0.879181, -0.0511932, -0.896446 )
+radius = 0.25
+height = 2.02659
+
+[node name="CSGCylinder6" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( 0.934435, -0.336873, -0.115535, 0.356135, 0.883896, 0.303143, 0, -0.324413, 0.945916, 0, 2.40179, -0.404251 )
+radius = 0.2
+height = 0.686312
+cone = true
+
+[node name="CSGCylinder7" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( 0.934435, -0.336873, -0.115535, 0.291618, 0.90999, -0.294748, 0.204428, 0.241731, 0.948565, 0, 2.40179, 0.34642 )
+radius = 0.2
+height = 0.686312
+cone = true
+
+[node name="CSGCylinder8" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( -0.195084, 0.812969, -0.548656, -0.972258, -0.233908, -0.000889279, -0.129058, 0.533263, 0.836047, 0.660873, 1.12236, -0.788422 )
+radius = 0.2526
+sides = 3
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder8"]
+transform = Transform( 1, 2.75671e-07, -2.98023e-08, 1.63913e-07, 1, -8.9407e-08, -7.45058e-08, -5.96046e-08, 1, -0.0137177, 0.807312, -0.0168457 )
+radius = 0.132826
+height = 0.568295
+sides = 3
+
+[node name="CSGCylinder9" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( -0.215666, 0.87582, 0.431774, -0.976435, -0.197013, -0.0880937, 0.00791059, -0.440597, 0.89767, 0.611511, 1.06031, 0.781296 )
+radius = 0.2526
+sides = 3
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/CSGCylinder9"]
+transform = Transform( 1, 2.75671e-07, -2.98023e-08, 1.63913e-07, 1, -8.9407e-08, -7.45058e-08, -5.96046e-08, 1, -0.0137177, 0.807312, -0.0168457 )
+radius = 0.132826
+height = 0.568295
+sides = 3
+
+[node name="HamsterDialogue" type="Area" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster" groups=["Dialogue"]]
+transform = Transform( 0.983681, -0.179918, 0, 0.179918, 0.983681, 0, 0, 0, 1, 3.93472, 0.719671, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/HamsterDialogue"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+shape = SubResource( 62 )
+
+[node name="Dialogue" type="Control" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/HamsterDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/HamsterDialogue/Dialogue"]
+margin_right = 350.0
+margin_bottom = 156.0
+bbcode_enabled = true
+bbcode_text = "[center]meoowww (now where did I leave that last [color=blue]magic[/color] slice of cheese)[/center]"
+text = "meoowww (now where did I leave that last magic slice of cheese)"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/HamsterDialogue/Dialogue"]
+margin_right = 363.0
+margin_bottom = 90.0
+bbcode_enabled = true
+bbcode_text = "[center]bark bark bark(I definitely do not have a memory disorder)[/center]"
+text = "bark bark bark(I definitely do not have a memory disorder)"
+
+[node name="Pictures" type="Control" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/HamsterDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/HamsterDialogue/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="TextureRect2" type="TextureRect" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster/HamsterDialogue/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/FloorPlank/Hamster/Hamster"]
+transform = Transform( 0.983681, -0.179918, 0, 0.179918, 0.983681, 0, 0, 0, 1, 0.359833, -1.96736, 0 )
+operation = 2
+width = 8.0
+depth = 6.0
+
+[node name="Eyes" type="CSGCombiner" parent="Rooms/Kitchen/FloorPlank/Hamster"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37375, 2.17132, 0 )
+material_override = SubResource( 59 )
+use_collision = true
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/FloorPlank/Hamster/Eyes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145309, -0.214179, 0.22847 )
+radius = 0.0761951
+radial_segments = 6
+rings = 3
+
+[node name="CSGSphere2" type="CSGSphere" parent="Rooms/Kitchen/FloorPlank/Hamster/Eyes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145, -0.214, -0.228 )
+radius = 0.0761951
+radial_segments = 6
+rings = 3
+
+[node name="Cheese" type="CSGCombiner" parent="Rooms/Kitchen/FloorPlank/Hamster"]
+transform = Transform( 0.159089, 0, 0.987264, 0, 1, 0, -0.987264, 0, 0.159089, 8, 1, 0 )
+material_override = SubResource( 60 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/FloorPlank/Hamster/Cheese"]
+radius = 3.0
+height = 4.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Rooms/Kitchen/FloorPlank/Hamster/Cheese/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0 )
+operation = 2
+polygon = PoolVector2Array( 0, 0, 2, 3, 3, 3, 3, 2 )
+depth = 6.0
+
+[node name="MomentumChanger" type="CSGCombiner" parent="Rooms/Kitchen"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -34, 82 )
+material_override = SubResource( 47 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MomentumChanger"]
+width = 24.0
+height = 24.0
+depth = 12.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/MomentumChanger/CSGBox"]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -13, -6 )
+operation = 2
+radius = 12.0
+height = 50.0
+sides = 64
+cone = true
+
+[node name="MiniHouse" type="Spatial" parent="Rooms/Kitchen"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 10, 6 )
+
+[node name="Base" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1 )
+material_override = SubResource( 48 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Base"]
+width = 26.0
+depth = 30.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Base/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -11.5 )
+operation = 2
+height = 4.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Kitchen/MiniHouse/Base"]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.62939e-06, -2, 0 )
+radius = 6.0
+height = 4.0
+cone = true
+
+[node name="Sheath" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 1.875, -10.4 )
+material_override = ExtResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Sheath"]
+width = 3.0
+height = 3.75
+depth = 3.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Sheath/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1 )
+operation = 2
+width = 4.0
+height = 6.0
+depth = 4.0
+
+[node name="Walls" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2 )
+material_override = ExtResource( 3 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+width = 20.0
+height = 8.0
+depth = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+operation = 2
+width = 19.0
+height = 8.0
+depth = 19.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox/CSGBox"]
+operation = 2
+width = 20.0
+height = 0.5
+depth = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox/CSGBox/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6 )
+operation = 2
+width = 3.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox/CSGBox/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -8.5 )
+operation = 2
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -2, 10 )
+operation = 2
+height = 4.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -1.5, 10 )
+operation = 2
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1.5, 10 )
+operation = 2
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, -1.5, 10 )
+operation = 2
+
+[node name="CSGBox6" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2.5, 10 )
+operation = 2
+
+[node name="CSGBox7" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.5, 10 )
+operation = 2
+
+[node name="CSGBox8" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Walls/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2.5, 10 )
+operation = 2
+
+[node name="Shakespearicles" type="Area" parent="Rooms/Kitchen/MiniHouse" groups=["Dialogue"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Kitchen/MiniHouse/Shakespearicles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1 )
+shape = SubResource( 50 )
+
+[node name="Dialogue" type="Control" parent="Rooms/Kitchen/MiniHouse/Shakespearicles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Kitchen/MiniHouse/Shakespearicles/Dialogue"]
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]The second floor. Invented by the strongest writer that ever lived.[/center]"
+text = "The second floor. Invented by the strongest writer that ever lived."
+
+[node name="Pictures" type="Control" parent="Rooms/Kitchen/MiniHouse/Shakespearicles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Rooms/Kitchen/MiniHouse/Shakespearicles/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Hat" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+material_override = SubResource( 53 )
+use_collision = true
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Rooms/Kitchen/MiniHouse/Hat"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 8 )
+polygon = PoolVector2Array( -12, 0, -1, 3, 1, 3, 10, 0 )
+depth = 20.0
+
+[node name="CSGPolygon2" type="CSGPolygon" parent="Rooms/Kitchen/MiniHouse/Hat"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 9 )
+polygon = PoolVector2Array( -13, 0, 0, 4, 2, 4, 13, 0 )
+depth = 22.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Rooms/Kitchen/MiniHouse/Hat/CSGPolygon2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
+operation = 2
+polygon = PoolVector2Array( -12, 0, -1, 3, 1, 3, 10, 0 )
+depth = 22.0
+
+[node name="ImmediateGeometry3" type="ImmediateGeometry" parent="Rooms/Kitchen/MiniHouse/Hat/CSGPolygon2/CSGPolygon"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1e-05 )
+material_override = SubResource( 54 )
+
+[node name="11633" type="MeshInstance" parent="Rooms/Kitchen/MiniHouse/Hat/CSGPolygon2/CSGPolygon/ImmediateGeometry3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1e-05 )
+mesh = SubResource( 58 )
+
+[node name="Tube" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -3, -15 )
+material_override = SubResource( 68 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -29, 4.5 )
+width = 3.0
+height = 60.0
+depth = 3.0
+
+[node name="CaveMap" type="Area" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox" groups=["UnlockMap"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27, 0 )
+script = ExtResource( 9 )
+
+[node name="Caves" type="CollisionShape" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox/CaveMap"]
+shape = SubResource( 91 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+height = 62.0
+
+[node name="Tube2" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -3, -15 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -29, 4.5 )
+width = 3.0
+height = 60.0
+depth = 3.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube2/CSGBox"]
+operation = 2
+height = 62.0
+
+[node name="Tube3" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -3, 8 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -29, 4.5 )
+width = 3.0
+height = 60.0
+depth = 3.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube3/CSGBox"]
+operation = 2
+height = 62.0
+
+[node name="Tube4" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -3, 8 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -29, 4.5 )
+width = 3.0
+height = 60.0
+depth = 3.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube4/CSGBox"]
+operation = 2
+height = 62.0
+
+[node name="Tripwire" type="Area" parent="Rooms/Kitchen"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 43, 88 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Kitchen/Tripwire"]
+shape = SubResource( 66 )
+
+[node name="VentPortal" type="Portal" parent="Rooms/Kitchen"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29, -44, 99 )
+points = PoolVector2Array( 0, -2, 2, 0, 0, 2, -2, 0 )
+
+[node name="Eyeballs" type="Spatial" parent="Rooms/Kitchen"]
+
+[node name="ThunderEye" type="CSGCombiner" parent="Rooms/Kitchen/Eyeballs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.38264, -49.3823, -87.8332 )
+use_collision = true
+script = ExtResource( 7 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/ThunderEye"]
+radius = 4.0
+radial_segments = 24
+rings = 12
+material = SubResource( 87 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/ThunderEye"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.97208 )
+radius = 1.85577
+material = SubResource( 82 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/ThunderEye/CSGSphere2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.01419 )
+material = SubResource( 83 )
+
+[node name="CSGSphere3" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/ThunderEye"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0934448 )
+material_override = SubResource( 81 )
+radius = 3.96397
+radial_segments = 24
+rings = 12
+material = SubResource( 85 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Rooms/Kitchen/Eyeballs/ThunderEye"]
+stream = ExtResource( 8 )
+unit_db = 15.0
+autoplay = true
+max_distance = 75.0
+
+[node name="CSGTorus" type="CSGTorus" parent="Rooms/Kitchen/Eyeballs/ThunderEye"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.14441e-05, 0 )
+outer_radius = 4.25757
+material = SubResource( 89 )
+
+[node name="Eyeball2" type="CSGCombiner" parent="Rooms/Kitchen/Eyeballs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.042, -47.1056, -51.004 )
+use_collision = true
+script = ExtResource( 7 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball2"]
+material_override = SubResource( 81 )
+radius = 4.0
+radial_segments = 24
+rings = 12
+material = SubResource( 81 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.97208 )
+radius = 1.85577
+material = SubResource( 82 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball2/CSGSphere2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.01419 )
+material = SubResource( 83 )
+
+[node name="CSGSphere3" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0934448 )
+material_override = SubResource( 81 )
+radius = 3.96397
+radial_segments = 24
+rings = 12
+material = SubResource( 85 )
+
+[node name="Eyeball3" type="CSGCombiner" parent="Rooms/Kitchen/Eyeballs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7162, -47.8689, -66.8612 )
+use_collision = true
+script = ExtResource( 7 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball3"]
+material_override = SubResource( 81 )
+radius = 4.0
+radial_segments = 24
+rings = 12
+material = SubResource( 81 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.97208 )
+radius = 1.85577
+material = SubResource( 82 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball3/CSGSphere2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.01419 )
+material = SubResource( 83 )
+
+[node name="CSGSphere3" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0934448 )
+material_override = SubResource( 81 )
+radius = 3.96397
+radial_segments = 24
+rings = 12
+material = SubResource( 85 )
+
+[node name="Eyeball4" type="CSGCombiner" parent="Rooms/Kitchen/Eyeballs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.94269, -47.0866, -57.8612 )
+use_collision = true
+script = ExtResource( 7 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball4"]
+material_override = SubResource( 81 )
+radius = 4.0
+radial_segments = 24
+rings = 12
+material = SubResource( 81 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.97208 )
+radius = 1.85577
+material = SubResource( 82 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball4/CSGSphere2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.01419 )
+material = SubResource( 83 )
+
+[node name="CSGSphere3" type="CSGSphere" parent="Rooms/Kitchen/Eyeballs/Eyeball4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0934448 )
+material_override = SubResource( 81 )
+radius = 3.96397
+radial_segments = 24
+rings = 12
+material = SubResource( 85 )
+
+[node name="Vents" type="Room" parent="Rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -159, 6, -125 )
+
+[node name="Piece1" type="CSGCombiner" parent="Rooms/Vents"]
+material_override = SubResource( 71 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+width = 20.0
+height = 10.0
+depth = 16.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece1/CSGBox"]
+operation = 2
+width = 18.0
+height = 8.0
+depth = 18.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Vents/Piece1/CSGBox"]
+transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, 4, 8.00001 )
+operation = 2
+width = 10.0
+height = 22.0
+depth = 8.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Vents/Piece1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 13 )
+radius = 5.0
+height = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece1/CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+operation = 2
+width = 10.0
+height = 22.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Vents/Piece1/CSGCylinder"]
+transform = Transform( -4.37114e-08, 4.37114e-08, -1, 4.37114e-08, 1, 4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4, 0, 0 )
+operation = 2
+width = 10.0
+height = 22.0
+depth = 8.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Vents/Piece1/CSGCylinder"]
+operation = 2
+radius = 4.0
+height = 18.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Vents/Piece1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 13 )
+width = 20.0
+height = 6.0
+depth = 10.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece1/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+operation = 2
+width = 18.0
+height = 6.0
+depth = 10.0
+
+[node name="Piece2" type="CSGCombiner" parent="Rooms/Vents" groups=["Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 13 )
+material_override = SubResource( 73 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+width = 20.0
+height = 8.0
+depth = 10.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece2/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+operation = 2
+width = 18.0
+height = 8.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Vents/Piece2/CSGBox"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -2, 5 )
+operation = 2
+width = 18.0
+height = 4.0
+depth = 10.0
+
+[node name="Piece3" type="CSGCombiner" parent="Rooms/Vents" groups=["Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 26 )
+material_override = SubResource( 73 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
+width = 20.0
+height = 10.0
+depth = 30.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece3/CSGBox"]
+operation = 2
+width = 18.0
+height = 8.0
+depth = 32.0
+
+[node name="Piece4" type="CSGCombiner" parent="Rooms/Vents" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 51 )
+material_override = SubResource( 79 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6 )
+width = 20.0
+height = 10.0
+depth = 18.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Piece4/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+operation = 2
+width = 18.0
+height = 8.0
+depth = 18.0
+
+[node name="SpotLight" type="SpotLight" parent="Rooms/Vents/Piece4"]
+transform = Transform( 1, 0, 0, 0, -0.757861, 0.652416, 0, -0.652416, -0.757861, 0, 5, 5.82661 )
+light_energy = 100.0
+shadow_enabled = true
+spot_range = 24.284
+spot_attenuation = 0.840898
+spot_angle = 30.0
+
+[node name="Cheese" type="CSGCombiner" parent="Rooms/Vents" groups=["Teleporter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 62.8485 )
+material_override = SubResource( 75 )
+use_collision = true
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Rooms/Vents/Cheese"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.18322, 0.515938 )
+polygon = PoolVector2Array( -0.480759, -1.7525, 0, 1, 0.534195, -1.78093, 0, -2 )
+
+[node name="Telepathy" type="Area" parent="Rooms/Vents/Cheese" groups=["Dialogue"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Vents/Cheese/Telepathy"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+shape = SubResource( 77 )
+
+[node name="Dialogue" type="Control" parent="Rooms/Vents/Cheese/Telepathy"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Vents/Cheese/Telepathy/Dialogue"]
+margin_right = 346.0
+margin_bottom = 108.0
+bbcode_enabled = true
+bbcode_text = "[center]the cheese [color=yellow]sees[/color] where you wish to go.[/center]"
+text = "the cheese sees where you wish to go."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rooms/Vents/Cheese/Telepathy/Dialogue"]
+margin_right = 346.0
+margin_bottom = 108.0
+bbcode_enabled = true
+bbcode_text = "[center] [color=yellow]touch[/color] the cheese [/center]"
+text = " touch the cheese "
+
+[node name="Pictures" type="Control" parent="Rooms/Vents/Cheese/Telepathy"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Rooms/Vents/Cheese/Telepathy/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="Rooms/Vents/Cheese/Telepathy/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Destination" type="Spatial" parent="Rooms/Vents/Cheese"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 61, -155 )
+
+[node name="SecretLevel" type="Area" parent="Rooms/Vents/Cheese" groups=["UnlockMap"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+
+[node name="Secret Cheese" type="CollisionShape" parent="Rooms/Vents/Cheese/SecretLevel"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+shape = SubResource( 77 )
+
+[connection signal="body_entered" from="Rooms/Kitchen/MiniHouse/Tube/CSGBox/CaveMap" to="Rooms/Kitchen/MiniHouse/Tube/CSGBox/CaveMap" method="_on_CaveMap_body_entered"]
+[connection signal="area_entered" from="Rooms/Kitchen/Tripwire" to="Rooms/Kitchen" method="_on_Tripwire_area_entered"]
