@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/caveinner.glb-d0ce7078da458797201ef2302c265338.scn"
+path="res://.import/untitled.glb-435f0e2dcbb8b56b84ff17711b8f49cf.scn"
 
 [deps]
 
-source_file="res://Resources/caveinner.glb"
-dest_files=[ "res://.import/caveinner.glb-d0ce7078da458797201ef2302c265338.scn" ]
+source_file="res://Imports/untitled.glb"
+dest_files=[ "res://.import/untitled.glb-435f0e2dcbb8b56b84ff17711b8f49cf.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/sampleterrain.glb-3acbf3b14385c62018b0911604818351.scn"
+path="res://.import/Spike.glb-350278badc15dafae63df947e5f4e891.scn"
 
 [deps]
 
-source_file="res://Resources/sampleterrain.glb"
-dest_files=[ "res://.import/sampleterrain.glb-3acbf3b14385c62018b0911604818351.scn" ]
+source_file="res://Imports/Spike.glb"
+dest_files=[ "res://.import/Spike.glb-350278badc15dafae63df947e5f4e891.scn" ]
 
 [params]
 
