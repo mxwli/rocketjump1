@@ -272,34 +272,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7 )
 height = 1.0
 depth = 4.0
 
-[node name="CSGBox4" type="CSGBox" parent="Rooms/Room4/Lava"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.4, -3 )
-width = 1.0
-height = 1.0
-depth = 0.2
-
-[node name="CSGBox5" type="CSGBox" parent="Rooms/Room4/Lava"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.4, -7 )
-width = 1.0
-height = 1.0
-depth = 0.2
-
-[node name="CSGCombiner2" type="CSGCombiner" parent="Rooms/Room4" groups=["Absorbant"]]
-material_override = ExtResource( 3 )
-use_collision = true
-
-[node name="CSGBox2" type="CSGBox" parent="Rooms/Room4/CSGCombiner2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -7 )
-width = 1.4
-height = 4.0
-depth = 0.25
-
-[node name="CSGBox3" type="CSGBox" parent="Rooms/Room4/CSGCombiner2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3 )
-width = 1.4
-height = 4.0
-depth = 0.25
-
 [node name="Slide" type="CSGCombiner" parent="Rooms/Room4" groups=["Absorbant"]]
 transform = Transform( 0.707107, 0.707107, 0, -0.683013, 0.683013, 0.258819, 0.183013, -0.183013, 0.965926, 0, -12, -42 )
 material_override = ExtResource( 3 )
@@ -343,18 +315,18 @@ depth = 18.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17, -74 )
 points = PoolVector2Array( 7, -8, 7, 7, -7, 7, -7, -8 )
 
-[node name="StrafeTutorial" type="Area" parent="Rooms/Room4" groups=["Dialogue"]]
+[node name="StrafeTutorial (Deprecated)" type="Area" parent="Rooms/Room4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Rooms/Room4/StrafeTutorial"]
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Room4/StrafeTutorial (Deprecated)"]
 shape = SubResource( 5 )
 
-[node name="Dialogue" type="Control" parent="Rooms/Room4/StrafeTutorial"]
+[node name="Dialogue" type="Control" parent="Rooms/Room4/StrafeTutorial (Deprecated)"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Room4/StrafeTutorial/Dialogue"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Room4/StrafeTutorial (Deprecated)/Dialogue"]
 visible = false
 margin_right = 200.0
 margin_bottom = 100.0
@@ -362,7 +334,7 @@ bbcode_enabled = true
 bbcode_text = "[center]To rotate your momentum to the left, hold [b]only[/b] A and slowly move your mouse to the left.[/center]"
 text = "To rotate your momentum to the left, hold only A and slowly move your mouse to the left."
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Rooms/Room4/StrafeTutorial/Dialogue"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rooms/Room4/StrafeTutorial (Deprecated)/Dialogue"]
 visible = false
 margin_right = 200.0
 margin_bottom = 100.0
@@ -370,17 +342,17 @@ bbcode_enabled = true
 bbcode_text = "[center]It's the same thing when rotating to the right.[/center]"
 text = "It's the same thing when rotating to the right."
 
-[node name="Pictures" type="Control" parent="Rooms/Room4/StrafeTutorial"]
+[node name="Pictures" type="Control" parent="Rooms/Room4/StrafeTutorial (Deprecated)"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Rooms/Room4/StrafeTutorial/Pictures"]
+[node name="TextureRect" type="TextureRect" parent="Rooms/Room4/StrafeTutorial (Deprecated)/Pictures"]
 margin_right = 128.0
 margin_bottom = 200.0
 texture = ExtResource( 6 )
 
-[node name="TextureRect2" type="TextureRect" parent="Rooms/Room4/StrafeTutorial/Pictures"]
+[node name="TextureRect2" type="TextureRect" parent="Rooms/Room4/StrafeTutorial (Deprecated)/Pictures"]
 margin_right = 128.0
 margin_bottom = 200.0
 texture = ExtResource( 7 )
@@ -509,13 +481,13 @@ height = 1.0
 depth = 3.0
 
 [node name="CSGBox4" type="CSGBox" parent="Rooms/Room6/Checkpoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -8, -29 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -8, -29 )
 width = 3.0
 height = 1.0
 depth = 3.0
 
 [node name="CSGBox5" type="CSGBox" parent="Rooms/Room6/Checkpoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -14, -60 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -14, -45 )
 width = 3.0
 height = 1.0
 depth = 3.0
@@ -566,17 +538,12 @@ width = 5.0
 depth = 5.0
 
 [node name="CSGBox4" type="CSGBox" parent="Rooms/Room6/Platform"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -8, -29 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -8, -29 )
 width = 5.0
 depth = 5.0
 
-[node name="CSGBox5" type="CSGBox" parent="Rooms/Room6/Platform"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -2, -43 )
-height = 16.0
-depth = 14.0
-
 [node name="CSGBox6" type="CSGBox" parent="Rooms/Room6/Platform"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -14, -60 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -14, -45 )
 width = 5.0
 depth = 5.0
 
@@ -592,7 +559,7 @@ depth = 5.0
 
 [node name="CSGBox10" type="CSGBox" parent="Rooms/Room6/Platform"]
 transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 10, -21 )
-height = 16.0
+height = 46.0
 depth = 14.0
 
 [node name="CSGBox11" type="CSGBox" parent="Rooms/Room6/Platform"]

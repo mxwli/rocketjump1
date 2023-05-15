@@ -20,8 +20,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="RocketJump_1.0"
+config/name="RocketJump_1.1"
 run/main_scene="res://Scenes/Menu/Main.tscn"
+boot_splash/show_image=false
+
+[global]
+
+config=false
 
 [gui]
 

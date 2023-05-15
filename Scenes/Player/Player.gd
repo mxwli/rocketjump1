@@ -89,10 +89,10 @@ func _physics_process(delta):
 	elif dir.length()>0.01: #AIR
 		var proj = dir.dot(tmp)
 		
-		if(proj < 0.05 && keyspressed < 2):
-			tmp += dir*accel*delta
+		if(proj < 0.05 && keyspressed < 3):
+			tmp += dir*accel*delta*0.9
 		else:
-			tmp += dir*accel*delta*0.07
+			tmp += dir*accel*delta*0.017
 	
 	vel.x = tmp.x
 	vel.z = tmp.z
