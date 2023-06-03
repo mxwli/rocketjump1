@@ -475,7 +475,7 @@ height = 1.0
 depth = 3.0
 
 [node name="CSGBox2" type="CSGBox" parent="Rooms/Room6/Checkpoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -15 )
 width = 3.0
 height = 1.0
 depth = 3.0
@@ -533,7 +533,7 @@ width = 5.0
 depth = 5.0
 
 [node name="CSGBox2" type="CSGBox" parent="Rooms/Room6/Platform"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -15 )
 width = 5.0
 depth = 5.0
 
@@ -558,7 +558,7 @@ width = 5.0
 depth = 5.0
 
 [node name="CSGBox10" type="CSGBox" parent="Rooms/Room6/Platform"]
-transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -15, 10, -21 )
+transform = Transform( 0.965925, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965925, -11, 10, -23 )
 height = 46.0
 depth = 14.0
 
@@ -654,7 +654,7 @@ margin_bottom = 40.0
 [node name="Completor" type="Area" parent="Rooms/Room7" groups=["UnlockMap"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 0 )
 
-[node name="Basic Course" type="CollisionShape" parent="Rooms/Room7/Completor"]
+[node name="StrafeTut" type="CollisionShape" parent="Rooms/Room7/Completor"]
 shape = SubResource( 7 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

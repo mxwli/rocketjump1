@@ -31,6 +31,14 @@ func _on_Tutorial_pressed():
 	get_tree().change_scene("res://Scenes/Maps/Tutorial.tscn")
 
 
+func _on_StrafeTut_pressed():
+	get_tree().change_scene("res://Scenes/Maps/StrafeTut.tscn")
+
+
+func _on_Walls_pressed():
+	get_tree().change_scene("res://Scenes/Maps/Walls.tscn")
+
+
 func _on_Bsc1_pressed():
 	get_tree().change_scene("res://Scenes/Maps/BasicCourse.tscn")
 
@@ -67,3 +75,4 @@ func _on_ConfirmationDialog_confirmed():
 	config.clear()
 	config.save("user://config.cfg")
 	_ready()
+

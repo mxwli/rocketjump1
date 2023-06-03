@@ -1,0 +1,684 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/GridTexture.tres" type="Material" id=2]
+[ext_resource path="res://Resources/Absorbant.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Restarter.tres" type="Material" id=4]
+[ext_resource path="res://Resources/Absorbant.tres" type="Material" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2, 1, 2 )
+
+[sub_resource type="SpatialMaterial" id=74]
+flags_transparent = true
+flags_world_triplanar = true
+albedo_color = Color( 1, 1, 1, 0.486275 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=72]
+flags_transparent = true
+flags_world_triplanar = true
+albedo_color = Color( 1, 0, 0, 0.486275 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=70]
+flags_world_triplanar = true
+albedo_color = Color( 0.423529, 0.498039, 0.596078, 1 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="StreamTexture" id=71]
+flags = 23
+load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=73]
+flags_world_triplanar = true
+albedo_color = Color( 0.6, 0.65098, 0.592157, 1 )
+albedo_texture = SubResource( 71 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=79]
+
+[sub_resource type="SpatialMaterial" id=75]
+flags_transparent = true
+flags_world_triplanar = true
+albedo_color = Color( 1, 1, 1, 0.521569 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=76]
+extents = Vector3( 1, 2, 1 )
+
+[sub_resource type="BoxShape" id=77]
+extents = Vector3( 1, 2, 1 )
+
+[sub_resource type="SpatialMaterial" id=78]
+flags_transparent = true
+flags_world_triplanar = true
+albedo_color = Color( 1, 1, 1, 0.435294 )
+albedo_texture = SubResource( 71 )
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=80]
+extents = Vector3( 1, 1, 3 )
+
+[sub_resource type="ProceduralSky" id=3]
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 3 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.7
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+
+[node name="RoomManager" type="RoomManager" parent="."]
+active = false
+roomlist = NodePath("../Rooms")
+
+[node name="Rooms" type="Spatial" parent="."]
+
+[node name="Starter" type="Room" parent="Rooms"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Rooms/Starter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+material_override = ExtResource( 2 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Starter/CSGCombiner"]
+width = 8.0
+height = 6.0
+depth = 8.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Starter/CSGCombiner"]
+operation = 2
+width = 6.0
+height = 4.0
+depth = 6.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Starter/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5 )
+operation = 2
+height = 4.0
+
+[node name="StrafingDialogue" type="Area" parent="Rooms/Starter" groups=["Dialogue"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Starter/StrafingDialogue"]
+shape = SubResource( 1 )
+
+[node name="Dialogue" type="Control" parent="Rooms/Starter/StrafingDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Starter/StrafingDialogue/Dialogue"]
+margin_right = 249.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]Strafing is one of the most important skills in rocket jumping[/center]"
+text = "Strafing is one of the most important skills in rocket jumping"
+
+[node name="Pictures" type="Control" parent="Rooms/Starter/StrafingDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Rooms/Starter/StrafingDialogue/Pictures"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Portal" type="Portal" parent="Rooms/Starter"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, 4 )
+points = PoolVector2Array( 1, -2, 1, 2, -1, 2, -1, -2 )
+
+[node name="Halls" type="Room" parent="Rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21 )
+
+[node name="GlassObstacles" type="Spatial" parent="Rooms/Halls"]
+
+[node name="Glass" type="CSGCombiner" parent="Rooms/Halls/GlassObstacles" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -11 )
+material_override = SubResource( 74 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+radius = 3.0
+height = 16.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+radius = 2.95
+height = 16.0
+
+[node name="Glass2" type="CSGCombiner" parent="Rooms/Halls/GlassObstacles" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -2 )
+material_override = SubResource( 74 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+radius = 3.0
+height = 16.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+radius = 2.95
+height = 16.0
+
+[node name="Glass3" type="CSGCombiner" parent="Rooms/Halls/GlassObstacles" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -2 )
+material_override = SubResource( 74 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+radius = 3.0
+height = 16.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+radius = 2.95
+height = 16.0
+
+[node name="Glass4" type="CSGCombiner" parent="Rooms/Halls/GlassObstacles" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, 8 )
+material_override = SubResource( 74 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+radius = 3.0
+height = 16.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+radius = 2.95
+height = 16.0
+
+[node name="Glass5" type="CSGCombiner" parent="Rooms/Halls/GlassObstacles" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 8 )
+material_override = SubResource( 74 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+radius = 3.0
+height = 16.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+radius = 2.95
+height = 16.0
+
+[node name="Glass6" type="CSGCombiner" parent="Rooms/Halls/GlassObstacles" groups=["Absorbant", "Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3 )
+material_override = SubResource( 72 )
+use_collision = true
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+radius = 1.3
+height = 16.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/GlassObstacles/Glass6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+radius = 1.25
+height = 16.0
+
+[node name="Containers" type="Spatial" parent="Rooms/Halls"]
+
+[node name="Walls" type="CSGCombiner" parent="Rooms/Halls/Containers" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+material_override = SubResource( 70 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Halls/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 12.0
+height = 22.0
+depth = 34.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Halls/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+width = 10.0
+height = 18.0
+depth = 32.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Halls/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -16.5 )
+operation = 2
+height = 4.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/Halls/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 16.5 )
+operation = 2
+height = 4.0
+
+[node name="Lava" type="CSGCombiner" parent="Rooms/Halls/Containers" groups=["Absorbant", "Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+material_override = ExtResource( 4 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Halls/Containers/Lava"]
+width = 10.0
+depth = 32.0
+
+[node name="Platorms" type="Spatial" parent="Rooms/Halls"]
+
+[node name="Platform" type="CSGCombiner" parent="Rooms/Halls/Platorms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -15 )
+material_override = SubResource( 73 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Halls/Platorms/Platform"]
+height = 1.0
+
+[node name="Platform2" type="CSGCombiner" parent="Rooms/Halls/Platorms"]
+material_override = SubResource( 73 )
+use_collision = true
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Halls/Platorms/Platform2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -8 )
+width = 5.0
+height = 1.0
+depth = 8.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform2/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
+operation = 2
+radius = 3.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform2/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6 )
+operation = 2
+radius = 3.0
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform2/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6 )
+operation = 2
+radius = 3.0
+
+[node name="Platform3" type="CSGCombiner" parent="Rooms/Halls/Platorms"]
+material_override = SubResource( 73 )
+use_collision = true
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Halls/Platorms/Platform3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 3 )
+height = 1.0
+depth = 6.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform3/CSGBox3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5 )
+operation = 2
+radius = 3.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform3/CSGBox3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+operation = 2
+radius = 3.0
+
+[node name="Platform4" type="CSGCombiner" parent="Rooms/Halls/Platorms"]
+material_override = SubResource( 73 )
+use_collision = true
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/Halls/Platorms/Platform4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 3 )
+height = 1.0
+depth = 6.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform4/CSGBox4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5 )
+operation = 2
+radius = 3.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform4/CSGBox4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+operation = 2
+radius = 3.0
+
+[node name="Platform5" type="CSGCombiner" parent="Rooms/Halls/Platorms"]
+material_override = SubResource( 73 )
+use_collision = true
+
+[node name="CSGBox5" type="CSGBox" parent="Rooms/Halls/Platorms/Platform5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13 )
+width = 10.0
+height = 1.0
+depth = 6.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform5/CSGBox5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5 )
+operation = 2
+radius = 3.0
+height = 2.0
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="Rooms/Halls/Platorms/Platform5/CSGBox5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5 )
+operation = 2
+radius = 3.0
+height = 2.0
+
+[node name="Portal" type="Portal" parent="Rooms/Halls"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.5, 17 )
+points = PoolVector2Array( 1, -1, 1, 3, -1, 3, -1, -1 )
+
+[node name="Dialogue" type="Spatial" parent="Rooms/Halls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -15 )
+
+[node name="StrafeTutorial" type="Area" parent="Rooms/Halls/Dialogue" groups=["Dialogue"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Halls/Dialogue/StrafeTutorial"]
+shape = SubResource( 79 )
+
+[node name="Dialogue" type="Control" parent="Rooms/Halls/Dialogue/StrafeTutorial"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Halls/Dialogue/StrafeTutorial/Dialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]Air strafing allows you to rotate your momentum in the air[/center]"
+text = "Air strafing allows you to rotate your momentum in the air"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rooms/Halls/Dialogue/StrafeTutorial/Dialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]To airstrafe to the right,[/center]"
+text = "To airstrafe to the right,"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Rooms/Halls/Dialogue/StrafeTutorial/Dialogue"]
+visible = false
+margin_right = 314.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center][color=blue](ie. to change your momentum towards the right)[/color][/center]"
+text = "(ie. to change your momentum towards the right)"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Rooms/Halls/Dialogue/StrafeTutorial/Dialogue"]
+visible = false
+margin_right = 314.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]hold D and slowly move your mouse to the right.[/center]"
+text = "hold D and slowly move your mouse to the right."
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Rooms/Halls/Dialogue/StrafeTutorial/Dialogue"]
+visible = false
+margin_right = 314.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]Same goes for rotating towards the left[/center]"
+text = "Same goes for rotating towards the left"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Rooms/Halls/Dialogue/StrafeTutorial/Dialogue"]
+visible = false
+margin_right = 314.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]Use this to navigate around the glass pillars[/center]"
+text = "Use this to navigate around the glass pillars"
+
+[node name="Pictures" type="Control" parent="Rooms/Halls/Dialogue/StrafeTutorial"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Rooms/Halls/Dialogue/StrafeTutorial/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="Rooms/Halls/Dialogue/StrafeTutorial/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect3" type="TextureRect" parent="Rooms/Halls/Dialogue/StrafeTutorial/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect4" type="TextureRect" parent="Rooms/Halls/Dialogue/StrafeTutorial/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect5" type="TextureRect" parent="Rooms/Halls/Dialogue/StrafeTutorial/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect6" type="TextureRect" parent="Rooms/Halls/Dialogue/StrafeTutorial/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Drop" type="Room" parent="Rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 43 )
+
+[node name="Containers" type="Spatial" parent="Rooms/Drop"]
+
+[node name="Walls" type="CSGCombiner" parent="Rooms/Drop/Containers" groups=["Absorbant"]]
+material_override = ExtResource( 5 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Drop/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+width = 10.0
+height = 14.0
+depth = 10.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Drop/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+operation = 2
+width = 8.0
+height = 13.0
+depth = 8.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Drop/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4 )
+operation = 2
+height = 4.0
+
+[node name="CSGBox4" type="CSGBox" parent="Rooms/Drop/Containers/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -6.5, -2 )
+operation = 2
+height = 4.0
+
+[node name="Lava" type="CSGCombiner" parent="Rooms/Drop/Containers" groups=["Absorbant", "Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 2 )
+material_override = ExtResource( 4 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Drop/Containers/Lava"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+width = 8.0
+height = 0.25
+depth = 4.0
+
+[node name="Platforms" type="Spatial" parent="Rooms/Drop"]
+
+[node name="PlatformA" type="CSGCombiner" parent="Rooms/Drop/Platforms" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+material_override = SubResource( 75 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Drop/Platforms/PlatformA"]
+width = 8.0
+height = 1.0
+depth = 4.0
+
+[node name="Checkpoints" type="Spatial" parent="Rooms/Drop"]
+
+[node name="Checkpoint" type="Area" parent="Rooms/Drop/Checkpoints" groups=["Checkpoint"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Drop/Checkpoints/Checkpoint"]
+shape = SubResource( 76 )
+
+[node name="Indicators" type="Spatial" parent="Rooms/Drop"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Rooms/Drop/Indicators"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 2 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Drop/Indicators/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+width = 1.0
+height = 1.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Rooms/Drop/Indicators/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0 )
+polygon = PoolVector2Array( -1, 0, 0, 2, 1, 0, 1, 0 )
+
+[node name="Portal" type="Portal" parent="Rooms/Drop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, -6.5, -2 )
+points = PoolVector2Array( 1, -2, 1, 2, -1, 2, -1, -2 )
+
+[node name="Jump" type="Room" parent="Rooms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -6, 43 )
+
+[node name="Container" type="Spatial" parent="Rooms/Jump"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0 )
+
+[node name="Walls" type="CSGCombiner" parent="Rooms/Jump/Container" groups=["Absorbant"]]
+material_override = ExtResource( 5 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Jump/Container/Walls"]
+width = 12.0
+height = 14.0
+depth = 10.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Jump/Container/Walls"]
+operation = 2
+width = 10.0
+height = 12.0
+depth = 8.0
+
+[node name="CSGBox3" type="CSGBox" parent="Rooms/Jump/Container/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -4, -2 )
+operation = 2
+height = 4.0
+
+[node name="Lava" type="CSGCombiner" parent="Rooms/Jump/Container" groups=["Absorbant", "Restarter"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -5, 0 )
+material_override = ExtResource( 4 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Jump/Container/Lava"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0 )
+width = 6.0
+height = 0.25
+depth = 8.0
+
+[node name="Checkpoints" type="Spatial" parent="Rooms/Jump"]
+
+[node name="Checkpoint" type="Area" parent="Rooms/Jump/Checkpoints" groups=["Checkpoint"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Jump/Checkpoints/Checkpoint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 77 )
+
+[node name="Platforms" type="Spatial" parent="Rooms/Jump"]
+
+[node name="Platform1" type="CSGCombiner" parent="Rooms/Jump/Platforms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2.5, 0 )
+material_override = ExtResource( 2 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Jump/Platforms/Platform1"]
+width = 4.0
+height = 0.25
+depth = 8.0
+
+[node name="Platform2" type="CSGCombiner" parent="Rooms/Jump/Platforms"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5.5, 0 )
+material_override = SubResource( 78 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Jump/Platforms/Platform2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+width = 6.0
+height = 0.25
+depth = 8.0
+
+[node name="Completion" type="Spatial" parent="Rooms/Jump"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 0 )
+
+[node name="CompletionDialogue" type="Area" parent="Rooms/Jump/Completion" groups=["Dialogue", "UnlockMap"]]
+
+[node name="Walls" type="CollisionShape" parent="Rooms/Jump/Completion/CompletionDialogue"]
+shape = SubResource( 80 )
+
+[node name="Dialogue" type="Control" parent="Rooms/Jump/Completion/CompletionDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rooms/Jump/Completion/CompletionDialogue/Dialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]Strafing tutorial completed[/center]"
+text = "Strafing tutorial completed"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rooms/Jump/Completion/CompletionDialogue/Dialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]A new map has been added to the menu[/center]"
+text = "A new map has been added to the menu"
+
+[node name="Pictures" type="Control" parent="Rooms/Jump/Completion/CompletionDialogue"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Rooms/Jump/Completion/CompletionDialogue/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="Rooms/Jump/Completion/CompletionDialogue/Pictures"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Rooms/Jump/Completion/CompletionDialogue"]
+shape = SubResource( 80 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.683013, 0.592752, -0.426777, 0.183013, 0.426777, 0.885646, 0.707107, -0.683013, 0.183013, -33, 23, 47 )
+light_energy = 0.5
+light_indirect_energy = 0.5
+light_bake_mode = 0

@@ -30,8 +30,8 @@ func _on_Area_body_entered(body):
 							-Vector3(0,pheight/2+prad,0)
 							-global_translation).length(),
 							(player.get_node("CollisionHull").global_translation-global_translation).length()); #
-		var damage = 90*(1-0.5*clamp(distance/2.305,0,1))
-		var direction = player.get_node("CollisionHull").global_translation+Vector3(0, 0.19, 0)-global_translation
+		var damage = 90*(1-0.5*clamp(distance/2.31,0,1))
+		var direction = player.get_node("CollisionHull").global_translation+Vector3(0, 0.2, 0)-global_translation
 		direction /= direction.length()
 		var scale = 82/55 * 5 * (1 if player.is_on_floor() else 2)
 		player.get_parent().emit_signal("impart_force", direction*scale*damage*1.905/100)

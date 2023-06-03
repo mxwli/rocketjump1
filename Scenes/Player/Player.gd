@@ -32,6 +32,7 @@ var cpos					#crouching position of hitbox
 var nheight = 0.601			#standing height of hitbox
 var cheight = 0.22015		#crouching height of hitbox
 var mousesens				#mouse sensitivity
+var rampslide_vel=2.667		#vertical velocity required to register a rampslide
 
 signal impart_force(force)
 
@@ -63,6 +64,10 @@ func fire():
 	pass
 
 
+func is_on_floor():
+	return body.is_on_floor() and vel.y < rampslide_vel
+
+
 func _physics_process(delta):
 	
 	#GRAVITY AND COOLDOWN
@@ -81,7 +86,7 @@ func _physics_process(delta):
 	#MOVEMENT CALCULATIONS
 	var tmp = vel
 	tmp.y = 0
-	if(body.is_on_floor()): #GROUND
+	if(is_on_floor()): #GROUND
 		if tmp.length() > movespeed:
 			tmp *= movespeed/tmp.length()
 		else:
@@ -102,7 +107,7 @@ func _physics_process(delta):
 	if(info != null):
 		handle(info.collider)
 	#THEN WE CAN MOVE
-	vel = body.move_and_slide(vel, Vector3(0, 1, 0), true, 4, min(0.785, 1 if tmp.length()<4 else 4/tmp.length()))
+	vel = body.move_and_slide(vel, Vector3(0, 1, 0), true, 4, 0.785)
 	
 	#SHOOTING
 	if Input.is_mouse_button_pressed(1):
@@ -170,6 +175,7 @@ func handle(obj):
 	if(obj.is_in_group("UnlockMap")):
 		config.load("user://config.cfg")
 		config.set_value("Unlocks", obj.get_child(0).name, true)
+		obj.get_child(0).queue_free()
 		config.save("user://config.cfg")
 
 func _on_AreaScan_area_entered(area):
