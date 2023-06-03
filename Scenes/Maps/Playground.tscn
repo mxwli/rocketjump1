@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Resources/bark.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Maps/Eyeball.gd" type="Script" id=7]
 [ext_resource path="res://Resources/epic-storm-thunder-rainwindwaves-no-loops-106800.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/Maps/GodoCave.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Maps/GotoPlayground2.gd" type="Script" id=10]
 
 [sub_resource type="Environment" id=6]
 ambient_light_color = Color( 0.313726, 0.313726, 0.313726, 1 )
@@ -338,7 +339,7 @@ vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
 params_line_width = 3.0
 
-[sub_resource type="Image" id=92]
+[sub_resource type="Image" id=96]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 37, 0, 0, 0, 52, 0, 0, 0, 67, 0, 0, 0, 67, 0, 0, 0, 52, 0, 0, 0, 37, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 38, 38, 38, 80, 194, 194, 194, 161, 226, 226, 226, 199, 247, 247, 247, 236, 247, 247, 247, 236, 226, 226, 226, 199, 194, 194, 194, 161, 38, 38, 38, 80, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 135, 135, 135, 119, 245, 245, 245, 231, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 245, 245, 245, 231, 135, 135, 135, 119, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 135, 135, 135, 119, 255, 255, 255, 254, 255, 255, 255, 255, 255, 226, 226, 255, 255, 169, 169, 255, 255, 144, 144, 255, 255, 144, 144, 255, 255, 169, 169, 255, 255, 226, 226, 255, 255, 255, 255, 255, 255, 255, 255, 254, 133, 133, 133, 118, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 10, 41, 41, 41, 80, 245, 245, 245, 231, 255, 255, 255, 255, 255, 197, 197, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 197, 197, 255, 255, 255, 255, 255, 245, 245, 245, 231, 38, 38, 38, 79, 0, 0, 0, 10, 0, 0, 0, 36, 192, 192, 192, 159, 255, 255, 255, 255, 255, 226, 226, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 227, 227, 255, 255, 255, 255, 255, 192, 192, 192, 159, 0, 0, 0, 36, 0, 0, 0, 51, 225, 225, 225, 198, 255, 255, 255, 255, 255, 170, 170, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 170, 170, 255, 255, 255, 255, 255, 225, 225, 225, 198, 0, 0, 0, 51, 0, 0, 0, 66, 246, 246, 246, 233, 255, 255, 255, 255, 255, 146, 146, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 146, 146, 255, 255, 255, 255, 255, 246, 246, 246, 233, 0, 0, 0, 66, 0, 0, 0, 66, 246, 246, 246, 234, 255, 255, 255, 255, 255, 145, 145, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 146, 146, 255, 255, 255, 255, 255, 246, 246, 246, 233, 0, 0, 0, 66, 0, 0, 0, 51, 225, 225, 225, 198, 255, 255, 255, 255, 255, 170, 170, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 170, 170, 255, 255, 255, 255, 255, 225, 225, 225, 198, 0, 0, 0, 51, 0, 0, 0, 36, 192, 192, 192, 159, 255, 255, 255, 255, 255, 226, 226, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 226, 226, 255, 255, 255, 255, 255, 192, 192, 192, 159, 0, 0, 0, 36, 0, 0, 0, 10, 41, 41, 41, 80, 245, 245, 245, 231, 255, 255, 255, 255, 255, 197, 197, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 197, 197, 255, 255, 255, 255, 255, 245, 245, 245, 231, 41, 41, 41, 80, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 32, 135, 135, 135, 119, 255, 255, 255, 254, 255, 255, 255, 255, 255, 226, 226, 255, 255, 169, 169, 255, 255, 144, 144, 255, 255, 144, 144, 255, 255, 169, 169, 255, 255, 226, 226, 255, 255, 255, 255, 255, 255, 255, 255, 254, 135, 135, 135, 119, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 138, 138, 138, 120, 245, 245, 245, 231, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 245, 245, 245, 231, 136, 136, 136, 120, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 38, 38, 38, 80, 194, 194, 194, 161, 226, 226, 226, 199, 247, 247, 247, 236, 247, 247, 247, 236, 226, 226, 226, 199, 194, 194, 194, 161, 38, 38, 38, 80, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 37, 0, 0, 0, 52, 0, 0, 0, 67, 0, 0, 0, 67, 0, 0, 0, 52, 0, 0, 0, 37, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "RGBA8",
@@ -350,7 +351,7 @@ data = {
 [sub_resource type="ImageTexture" id=56]
 flags = 0
 flags = 0
-image = SubResource( 92 )
+image = SubResource( 96 )
 size = Vector2( 16, 16 )
 
 [sub_resource type="SpatialMaterial" id=57]
@@ -432,6 +433,12 @@ albedo_color = Color( 1, 0.796078, 0, 1 )
 
 [sub_resource type="BoxShape" id=77]
 extents = Vector3( 9, 4, 7 )
+
+[sub_resource type="BoxShape" id=93]
+extents = Vector3( 0.9, 0.9, 0.9 )
+
+[sub_resource type="BoxShape" id=95]
+extents = Vector3( 0.9, 0.9, 0.9 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -2446,17 +2453,17 @@ width = 3.0
 height = 60.0
 depth = 3.0
 
-[node name="CaveMap" type="Area" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox" groups=["UnlockMap"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27, 0 )
-script = ExtResource( 9 )
-
-[node name="Caves" type="CollisionShape" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox/CaveMap"]
-shape = SubResource( 91 )
-
 [node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 operation = 2
 height = 62.0
+
+[node name="Playground2Map2" type="Area" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox" groups=["UnlockMap"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -26, 0 )
+script = ExtResource( 10 )
+
+[node name="Playground2" type="CollisionShape" parent="Rooms/Kitchen/MiniHouse/Tube/CSGBox/Playground2Map2"]
+shape = SubResource( 91 )
 
 [node name="Tube2" type="CSGCombiner" parent="Rooms/Kitchen/MiniHouse" groups=["Absorbant"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -3, -15 )
@@ -2761,6 +2768,12 @@ width = 18.0
 height = 8.0
 depth = 18.0
 
+[node name="CSGCylinder" type="CSGCylinder" parent="Rooms/Vents/Piece4/CSGBox"]
+transform = Transform( -4.37114e-08, 1, 0, -0.92185, -4.02953e-08, 0.387548, 0.387548, 1.69403e-08, 0.92185, -9, -2.17324, 0 )
+operation = 2
+radius = 1.7
+height = 4.0
+
 [node name="SpotLight" type="SpotLight" parent="Rooms/Vents/Piece4"]
 transform = Transform( 1, 0, 0, 0, -0.757861, 0.652416, 0, -0.652416, -0.757861, 0, 5, 5.82661 )
 light_energy = 100.0
@@ -2782,7 +2795,7 @@ polygon = PoolVector2Array( -0.480759, -1.7525, 0, 1, 0.534195, -1.78093, 0, -2 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Rooms/Vents/Cheese/Telepathy"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 shape = SubResource( 77 )
 
 [node name="Dialogue" type="Control" parent="Rooms/Vents/Cheese/Telepathy"]
@@ -2827,5 +2840,53 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
 shape = SubResource( 77 )
 
-[connection signal="body_entered" from="Rooms/Kitchen/MiniHouse/Tube/CSGBox/CaveMap" to="Rooms/Kitchen/MiniHouse/Tube/CSGBox/CaveMap" method="_on_CaveMap_body_entered"]
+[node name="Caves" type="CollisionShape" parent="Rooms/Vents/Cheese"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, -61, -5.8485 )
+shape = SubResource( 93 )
+
+[node name="Tube" type="CSGCombiner" parent="Rooms/Vents" groups=["Absorbant"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 52.5 )
+material_override = SubResource( 68 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Tube"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -29, 4.5 )
+width = 3.0
+height = 60.0
+depth = 3.0
+
+[node name="CaveMap" type="Area" parent="Rooms/Vents/Tube/CSGBox" groups=["UnlockMap"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27, 0 )
+script = ExtResource( 9 )
+
+[node name="Caves" type="CollisionShape" parent="Rooms/Vents/Tube/CSGBox/CaveMap"]
+shape = SubResource( 95 )
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Tube/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+operation = 2
+height = 62.0
+
+[node name="CSGBox2" type="CSGBox" parent="Rooms/Vents/Tube"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 4.5 )
+width = 4.0
+height = 4.0
+depth = 5.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Tube/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+operation = 2
+width = 4.0
+height = 3.5
+depth = 4.0
+
+[node name="CSGBox" type="CSGBox" parent="Rooms/Vents/Tube/CSGBox2/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -2, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="Rooms/Vents/Tube"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 4 )
+light_energy = 4.775
+
+[connection signal="body_entered" from="Rooms/Kitchen/MiniHouse/Tube/CSGBox/Playground2Map2" to="Rooms/Kitchen/MiniHouse/Tube/CSGBox/Playground2Map2" method="_on_Playground2Map2_body_entered"]
 [connection signal="area_entered" from="Rooms/Kitchen/Tripwire" to="Rooms/Kitchen" method="_on_Tripwire_area_entered"]
+[connection signal="body_entered" from="Rooms/Vents/Tube/CSGBox/CaveMap" to="Rooms/Vents/Tube/CSGBox/CaveMap" method="_on_CaveMap_body_entered"]

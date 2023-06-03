@@ -1,11 +1,11 @@
 [gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[sub_resource type="StreamTexture" id=69]
+[sub_resource type="StreamTexture" id=71]
 flags = 23
 load_path = "res://.import/Grid.png-cad6b4728edb6226f97630a3c4e436eb.s3tc.stex"
 
 [resource]
 flags_world_triplanar = true
-albedo_texture = SubResource( 69 )
+albedo_texture = SubResource( 71 )
 metallic_specular = 0.0
 uv1_triplanar = true

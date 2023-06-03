@@ -336,12 +336,12 @@ depth = 1.0
 [node name="CSGBox5" type="CSGBox" parent="Obstacles4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -34 )
 width = 8.0
-depth = 8.0
+depth = 18.0
 
 [node name="CSGBox6" type="CSGBox" parent="Obstacles4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -56 )
 width = 8.0
-depth = 8.0
+depth = 18.0
 
 [node name="EndDialogue" type="Area" parent="Obstacles4" groups=["Dialogue"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -83 )

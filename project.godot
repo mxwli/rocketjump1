@@ -20,8 +20,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="RocketJump_1.0"
+config/name="RocketJump_1.1"
 run/main_scene="res://Scenes/Menu/Main.tscn"
+boot_splash/show_image=false
+
+[global]
+
+config=false
 
 [gui]
 
@@ -31,6 +36,7 @@ common/drop_mouse_on_gui_input_disabled=true
 
 common/enable_pause_aware_picking=true
 3d/physics_engine="GodotPhysics"
+3d/godot_physics/bvh_collision_margin=0.0
 
 [rendering]
 
