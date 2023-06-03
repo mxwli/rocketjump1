@@ -924,16 +924,16 @@ use_in_baked_light = true
 use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Ramp"]
-transform = Transform( 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, -11, -2, 0 )
-width = 22.0
+transform = Transform( 0.866026, 0.5, 0, -0.5, 0.866026, 0, 0, 0, 1, -9.72128, -2, 0 )
+width = 44.0
 height = 10.0
 depth = 24.0
 
 [node name="CSGBox" type="CSGBox" parent="Rooms/StartingRoom/DeskArea/Ramp/CSGBox"]
-transform = Transform( 0.965927, -0.258819, 0, 0.258819, 0.965927, 0, 0, 0, 1, 0.776455, -2.89777, 0 )
+transform = Transform( 0.866026, -0.5, 0, 0.5, 0.866026, 0, 0, 0, 1, 11.7126, -3.16236, 0 )
 operation = 2
-width = 24.0
-height = 10.0
+width = 50.0
+height = 20.0
 depth = 28.0
 
 [node name="RackArea" type="Spatial" parent="Rooms/StartingRoom"]
@@ -1998,6 +1998,12 @@ use_collision = true
 [node name="CSGBox" type="CSGBox" parent="Rooms/Kitchen/CeilingPlanks/Plank2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0621643, -13.8923 )
 width = 4.0
+depth = 176.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="Rooms/Kitchen/CeilingPlanks/Plank2/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.866013, 87.5 )
+operation = 2
+polygon = PoolVector2Array( 0, -1, -2, 1, 0, 2, 2, 1 )
 depth = 176.0
 
 [node name="Plank3" type="CSGCombiner" parent="Rooms/Kitchen/CeilingPlanks"]

@@ -107,7 +107,7 @@ func _physics_process(delta):
 	if(info != null):
 		handle(info.collider)
 	#THEN WE CAN MOVE
-	vel = body.move_and_slide(vel, Vector3(0, 1, 0), true, 4, 0.785)
+	vel = body.move_and_slide(vel, Vector3(0, 1, 0), true, 4, 0.735)
 	
 	#SHOOTING
 	if Input.is_mouse_button_pressed(1):
